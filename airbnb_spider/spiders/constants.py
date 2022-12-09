@@ -4,9 +4,7 @@ headers_str = '''Host: www.airbnb.ru
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:106.0) Gecko/20100101 Firefox/106.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
-Accept-Encoding: gzip, deflate, br
 Content-Type: application/json
-Content-Length: 2106
 X-Airbnb-Supports-Airlock-V2: True
 X-Airbnb-API-Key: d306zoyjsyarp7ifhu67rjxn52tv0t20
 X-CSRF-Token: null
@@ -23,8 +21,15 @@ Referer: https://www.airbnb.ru/s/Antalya/homes?tab_id=home_tab&refinement_paths%
 Connection: keep-alive
 Cookie: frmfctr=wide; cfrmfctr=DESKTOP; previousTab=%7B%22id%22%3A%222cde734f-f3b1-491f-abbf-ed2e6bb1ad6f%22%2C%22url%22%3A%22https%3A%2F%2Fwww.airbnb.ru%2Fs%2FAntalya%2Fhomes%3Ftab_id%3Dhome_tab%26refinement_paths%255B%255D%3D%252Fhomes%26date_picker_type%3Dcalendar%26checkin%3D2022-12-01%26checkout%3D2022-12-31%26adults%3D1%26source%3Dstructured_search_input_header%26search_type%3Dfilter_change%26price_filter_num_nights%3D30%26query%3DAntalya%26price_max%3D96%26price_min%3D1%26flexible_trip_lengths%255B%255D%3Done_month%26flexible_trip_dates%255B%255D%3Dnovember%26drawer_open%3DFalse%22%7D; bev=1667318188_OGJkMjMwOTRhYmFj; jitney_client_session_id=a5b226d7-3dd0-44d4-8433-0e0ecdff7707; jitney_client_session_created_at=1667318196; jitney_client_session_updated_at=1667318196
 TE: trailers'''
-#Pragma: no-cache
-#Cache-Control: no-cache
+# will be added by scrapy
+# Content-Length: 2106
+
+# will be added by scrapy
+# Accept-Encoding: gzip, deflate, br
+
+# disables local caching
+# Pragma: no-cache
+# Cache-Control: no-cache
 
 headers = email.message_from_string(headers_str)
 

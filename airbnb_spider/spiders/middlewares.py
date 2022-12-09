@@ -24,14 +24,14 @@ class LoggingDownloaderMiddleware:
         body_debug = crawler.settings.get("REQUEST_RESPONSE_BODY_DEBUG", False)
         return cls(enabled=enabled, body_debug=body_debug)
 
-    def process_request(self, request, spider):
+    def process_request(self, request: scrapy.Request, spider: scrapy.Spider):
         self._sanitize(request=request)
         if self.enabled:
             repr = request_httprepr(request, body=self.body_debug)
             log.debug(f"Request:\n{repr}")
         return
 
-    def process_response(self, request, response, spider):
+    def process_response(self, request: scrapy.Request, response: scrapy.http.Response, spider: scrapy.Spider):
         if self.enabled:
             repr = response_httprepr(response, body=self.body_debug)
             log.debug(f"Reponse:\n{repr}")
@@ -43,7 +43,7 @@ class LoggingDownloaderMiddleware:
 
         encoding = request.headers.get("Accept-Encoding", "").decode()
         compression_enabled = any(tag in encoding for tag in ("gzip", "compress", "deflate", "br"))
-        if compression_enabled:
+        if compression_enabled and self.enabled and self.body_debug:
             log.warning(f"Body compression (Accept-Encoding={encoding}) and printing body is enabled. Removing header")
             del request.headers["Accept-Encoding"]
 

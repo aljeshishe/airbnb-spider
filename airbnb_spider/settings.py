@@ -6,18 +6,18 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
+LOG_LEVEL = 'INFO'
 BOT_NAME = 'airbnb_spider'
 
 SPIDER_MODULES = ['airbnb_spider.spiders']
 NEWSPIDER_MODULE = 'airbnb_spider.spiders'
-
+CONCURRENT_REQUESTS = 1
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'airbnb_spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -50,10 +50,11 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'airbnb_spider.middlewares.AirbnbSpiderDownloaderMiddleware': 543,
-#}
-
+DOWNLOADER_MIDDLEWARES = {
+    'airbnb_spider.spiders.middlewares.LoggingDownloaderMiddleware': 1000,
+}
+REQUEST_RESPONSE_DEBUG = False
+REQUEST_RESPONSE_BODY_DEBUG = True
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {

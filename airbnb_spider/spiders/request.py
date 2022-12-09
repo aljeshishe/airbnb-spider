@@ -1,22 +1,21 @@
 import copy
-import dataclasses
 import json
 import logging
 from datetime import date
-from typing import Any, Dict
 
-import jsonpath_ng
+import attrs
 import scrapy
 
 from airbnb_spider.spiders import utils, constants
 from airbnb_spider.spiders.filters import Filters
+from airbnb_spider.spiders.middlewares import request_httprepr, response_httprepr
 from airbnb_spider.spiders.place import Place
 
 log = logging.getLogger(__name__)
 
 
-@dataclasses.dataclass
-class Request(scrapy.Request):
+@attrs.define
+class RequestBase(scrapy.Request):
     spider: scrapy.Spider
     place: Place
     start_date: date
@@ -25,8 +24,11 @@ class Request(scrapy.Request):
     max_price: int = None
     next_page_cursor: str = None
 
-    def __post_init__(self):
-        log.info(f'Requesting page:{self.next_page_cursor} {self.min_price=} {self.max_price=} '
+    def __hash__(self):
+        return id(self)
+
+    def __attrs_post_init__(self):
+        log.debug(f'Requesting page:{self.next_page_cursor} {self.min_price=} {self.max_price=} '
                  f'start_date={utils.from_date(self.start_date)} end_date={utils.from_date(self.end_date)}')
 
         data = copy.deepcopy(constants.STAY_SEARCH_DATA_2)
@@ -45,37 +47,20 @@ class Request(scrapy.Request):
         if self.start_date is not None and self.end_date is not None:
             filters["priceFilterNumNights"] = (self.end_date - self.start_date).days
 
-        super().__init__(url=constants.STAY_SEARCH_URL, method="POST", headers=constants.headers, body=json.dumps(data),
-                         callback=self.parse)
+        super().__init__(url=constants.STAY_SEARCH_URL, method="POST", headers=constants.headers.items(), body=json.dumps(data),
+                         callback=self.parse, errback=self.errback)
 
     def parse(self, response):
-        data = json.loads(response.text)
+        raise NotImplementedError
 
-        expr = jsonpath_ng.parse(
-            "$.data.presentation.explore.sections.sectionIndependentData.staysSearch.searchResults[*]")
-        items = expr.find(response.text)
-        log.info(f"Got {len(items)} items")
-        for item in items:
-            item = utils.normalize(d=item.value)
-            item.update(dict(start_date=self.start_date, end_date=self.end_date, min_price=self.min_price,
-                             max_price=self.max_price))
-            item = self._prepare_item(item=item)
-            yield item
+    def errback(self, failure):
+        # if failure.check(HttpError) and "Session expired (invalid CSRF token)" in failure.value.response.text:
+        #     log.info("Session expired, restarting")
+        #     return self._create_session_request(cookiejar=failure.value.response.meta["cookiejar"])
 
-        next_page_cursor = self._get_next_page_cursor(data=data)
-        if next_page_cursor is None:
-            return
-        new_request = dataclasses.replace(self, next_page_cursor=next_page_cursor)
-        yield new_request
-
-    def _get_next_page_cursor(self, data: dict[str, Any]) -> str:
-        expr = jsonpath_ng.parse(
-            "data.presentation.explore.sections.sectionIndependentData.staysSearch.paginationInfo.nextPageCursor")
-        next_page_cursors = expr.find(data)
-        assert len(next_page_cursors) == 1
-        return next_page_cursors[0].value
-
-    def _prepare_item(self, item: Dict[str, Any], **kwargs) -> Dict[str, Any]:
-        item["place_name"] = self.place.query
-        item.update(kwargs)
-        return item
+        log.info(failure)
+        log.info("Request:\n" + request_httprepr(failure.request))
+        if response := getattr(failure.value, "response", None):
+            log.info("Reponse:\n" + response_httprepr(failure.value.response))
+        else:
+            log.info("No reponseReponse:\n" + response_httprepr(failure.value.response))
