@@ -11,8 +11,8 @@ BOT_NAME = 'airbnb_spider'
 
 SPIDER_MODULES = ['airbnb_spider.spiders']
 NEWSPIDER_MODULE = 'airbnb_spider.spiders'
-CONCURRENT_REQUESTS = 1
-
+CONCURRENT_REQUESTS = 10
+FEED_EXPORT_BATCH_ITEM_COUNT = 100
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'airbnb_spider (+http://www.yourdomain.com)'
 

@@ -16,15 +16,18 @@ class AirbnbSpider(scrapy.Spider):
     name = 'airbnb'
 
     def start_requests(self):
+        # cities = """
+        # Kas,turkey
+        # Antalya,turkey
+        # Alanya,turkey
+        # Istanbul,turkey
+        # Bagcilar,turkey
+        # Kucukcekmece,turkey
+        # Batumi,georgia
+        # Tbilisi,georgia
+        # """
         cities = """
-        Kas,turkey
-        Antalya,turkey
-        Alanya,turkey
-        Istanbul,turkey
-        Bagcilar,turkey
         Kucukcekmece,turkey
-        Batumi,georgia
-        Tbilisi,georgia
         """
 
         start_date = utils.to_date("2023-02-01")
