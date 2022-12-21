@@ -40,7 +40,7 @@ class ListingRequest(RequestBase):
         return next_page_cursors[0].value
 
     def _prepare_item(self, item: Dict[str, Any], **kwargs) -> Dict[str, Any]:
-        item["place_name"] = self.place.query
+        item["place_name"] = self.place.query if self.place is not None else ""
         item.update(kwargs)
         return item
 
@@ -52,8 +52,8 @@ class ListingRequest(RequestBase):
         next_page_cursor = d.pop("next_page_cursor")
         d["next_page_cursor"] = next_page_cursor[:5] + "..." if next_page_cursor else None
         d.pop("spider")
-        place = d.pop("place")
-        d["place"] = place.query
+        # place = d.pop("place")
+        # d["place"] = place.query
         d_str = " ".join(f"{k}={v}" for k, v in d.items() if v is not None)
         return f"{self.__class__.__name__}({d_str})"
 

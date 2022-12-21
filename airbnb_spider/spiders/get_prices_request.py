@@ -28,7 +28,7 @@ class GetPricesRequest(RequestBase):
     def parse(self, response):
         prices = self._get_prices_range(response=response)
         for _min_price, _max_price in utils.iterate_prices(start=prices.min_price, end=prices.max_price, step=5):
-            yield ListingRequest(spider=self, place=self.place, min_price=_min_price, max_price=_max_price,
+            yield ListingRequest(spider=self, bbox=self.bbox, min_price=_min_price, max_price=_max_price,
                                  start_date=self.start_date, end_date=self.end_date)
 
     def _get_prices_range(self, response) -> Prices:

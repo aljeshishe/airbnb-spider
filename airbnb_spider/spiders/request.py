@@ -7,6 +7,7 @@ import attrs
 import scrapy
 
 from airbnb_spider.spiders import utils, constants
+from airbnb_spider.spiders.bbox import BBox
 from airbnb_spider.spiders.filters import Filters
 from airbnb_spider.spiders.middlewares import request_httprepr, response_httprepr
 from airbnb_spider.spiders.place import Place
@@ -17,9 +18,10 @@ log = logging.getLogger(__name__)
 @attrs.define
 class RequestBase(scrapy.Request):
     spider: scrapy.Spider
-    place: Place
     start_date: date
     end_date: date
+    place: Place = None
+    bbox: BBox = None
     min_price: int = None
     max_price: int = None
     next_page_cursor: str = None
@@ -34,7 +36,14 @@ class RequestBase(scrapy.Request):
         data = copy.deepcopy(constants.STAY_SEARCH_DATA_2)
         data["variables"]["staysSearchRequest"]["cursor"] = self.next_page_cursor
         filters = Filters(data["variables"]["staysSearchRequest"]["rawParams"])
-        filters["placeId"] = self.place.id
+        if self.place is not None:
+            filters["placeId"] = self.place.id
+        if self.bbox is not None:
+            filters["swLat"] = self.bbox.sw_lat
+            filters["swLng"] = self.bbox.sw_lng
+            filters["neLat"] = self.bbox.ne_lat
+            filters["neLng"] = self.bbox.ne_lng
+            filters["searchByMap"] = True
         filters["itemsPerGrid"] = constants.items_per_page
         if self.min_price is not None:
             filters["priceMin"] = self.min_price
@@ -54,12 +63,8 @@ class RequestBase(scrapy.Request):
         raise NotImplementedError
 
     def errback(self, failure):
-        # if failure.check(HttpError) and "Session expired (invalid CSRF token)" in failure.value.response.text:
-        #     log.info("Session expired, restarting")
-        #     return self._create_session_request(cookiejar=failure.value.response.meta["cookiejar"])
-
         log.info(failure)
-        log.info("Request:\n" + request_httprepr(failure.request))
+        log.info("Request:\n" + request_httprepr(failure.request, body=True))
         if response := getattr(failure.value, "response", None):
             log.info("Reponse:\n" + response_httprepr(failure.value.response))
         else:

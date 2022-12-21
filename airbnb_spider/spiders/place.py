@@ -37,3 +37,4 @@ class Place:
         assert len(prices) == 2
         return prices
 
+
