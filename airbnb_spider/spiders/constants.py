@@ -1,26 +1,50 @@
 import email
 
+# headers for no account
 headers_str = '''Host: www.airbnb.ru
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:106.0) Gecko/20100101 Firefox/106.0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Content-Type: application/json
-X-Airbnb-Supports-Airlock-V2: True
+Referer: https://www.airbnb.ru/s/Ka%C5%9F-Antalya/homes?refinement_paths%5B%5D=%2Fhomes&checkin=2023-01-23&checkout=2023-01-29&date_picker_type=calendar&adults=1&search_type=user_map_move&tab_id=home_tab&query=Ka%C5%9F%20Antalya&flexible_trip_lengths%5B%5D=one_week&price_filter_input_type=2&price_filter_num_nights=6&ne_lat=36.744556081110574&ne_lng=30.27026731365808&sw_lat=35.55217688394924&sw_lng=29.77027497099229&zoom=10&search_by_map=true&place_id=ChIJTc8GpVTawRQRs03Lsy9Qv88
+X-Airbnb-Supports-Airlock-V2: true
 X-Airbnb-API-Key: d306zoyjsyarp7ifhu67rjxn52tv0t20
 X-CSRF-Token: null
 X-CSRF-Without-Token: 1
 X-Airbnb-GraphQL-Platform: web
 X-Airbnb-GraphQL-Platform-Client: minimalist-niobe
-X-Niobe-Short-Circuited: True
-x-client-request-id: 1ddg1b70v218pv0i2cbe11clxo85
+X-Niobe-Short-Circuited: true
+x-client-request-id: 0bpcxol0wwsf421qkkk4e0ie08i3
 Origin: https://www.airbnb.ru
 Sec-Fetch-Dest: empty
 Sec-Fetch-Mode: cors
 Sec-Fetch-Site: same-origin
-Referer: https://www.airbnb.ru/s/Antalya/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&date_picker_type=calendar&checkin=2022-12-01&checkout=2022-12-31&adults=1&source=structured_search_input_header&search_type=filter_change&price_filter_num_nights=30&query=Antalya&price_max=248&flexible_trip_lengths%5B%5D=one_month&flexible_trip_dates%5B%5D=november&drawer_open=False
 Connection: keep-alive
-Cookie: frmfctr=wide; cfrmfctr=DESKTOP; previousTab=%7B%22id%22%3A%222cde734f-f3b1-491f-abbf-ed2e6bb1ad6f%22%2C%22url%22%3A%22https%3A%2F%2Fwww.airbnb.ru%2Fs%2FAntalya%2Fhomes%3Ftab_id%3Dhome_tab%26refinement_paths%255B%255D%3D%252Fhomes%26date_picker_type%3Dcalendar%26checkin%3D2022-12-01%26checkout%3D2022-12-31%26adults%3D1%26source%3Dstructured_search_input_header%26search_type%3Dfilter_change%26price_filter_num_nights%3D30%26query%3DAntalya%26price_max%3D96%26price_min%3D1%26flexible_trip_lengths%255B%255D%3Done_month%26flexible_trip_dates%255B%255D%3Dnovember%26drawer_open%3DFalse%22%7D; bev=1667318188_OGJkMjMwOTRhYmFj; jitney_client_session_id=a5b226d7-3dd0-44d4-8433-0e0ecdff7707; jitney_client_session_created_at=1667318196; jitney_client_session_updated_at=1667318196
+Cookie: bev=1671580416_OTkyNTYyNGIzZTNi; jitney_client_session_id=230b9097-cb9b-48f3-a633-b2f1acf768ad; jitney_client_session_created_at=1671580417; jitney_client_session_updated_at=1671580417; ak_bmsc=F1A4310D266CB957FC582E27F1D716EE~000000000000000000000000000000~YAAQN8ETAk5GIRyFAQAAKf70MRLAiwKJuIwYFojKcTfxEbIpS9n3Pz0rAGccHV5xtmHjEsFJCFlklt/9iRhSIPL3SXwO81aohIUWxG+8uP+PIuP+xqnSPBMsz7NGygtje0VzqCrq0BBgue0y7e6rUZsuoamZwEQEK7WAXY1tIqd73bjyZg8AesvJ1rQdkXAOMuDUhvVysFHtyh4v0ozXZG8hdh/HaKGckpkHeWrGDJeqaFNL9M+tfsGzry9vos+JOg61d9iemImtY9mb2GgxFWGBEpCeDcpr9AyZ+pETUuxDAbmvf+q9yl7f9DMy6M9eOpUb/UYDTeIrNiuMBMweEJaEn4r4fxwwAas/JukJ48y5NvkAnYkT5j7nM2399lBli9KPUrD3MQRO; bm_sv=80BF947D540C548911D49A303501EF46~YAAQN8ETAnpGIRyFAQAASwr1MRLz5HisULUh5xdMBj64UdvLT+yZ3QqJX07z4QSYWnDVBM22IX+nqjCLcyqVsus1DakXVIfF8ibtOwTMVlH1JgoKn+vP9sowNirp3Hame9TAER+FgYucokvTrPrdiVdXl+wYaIlK7L9WVX4Mn6I9EWdy9Nqf23T3J4/PMIZiThcubHnFCGrZw3c9zN5uMeYYKM0hR8WL7W5+Qmrfy54BHLdbl7eN5atukl3rbd0=~1
 TE: trailers'''
+
+# headers for my account
+# headers_str = '''Host: www.airbnb.ru
+# User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:106.0) Gecko/20100101 Firefox/106.0
+# Accept: */*
+# Accept-Language: en-GB,en;q=0.5
+# Content-Type: application/json
+# X-Airbnb-Supports-Airlock-V2: True
+# X-Airbnb-API-Key: d306zoyjsyarp7ifhu67rjxn52tv0t20
+# X-CSRF-Token: null
+# X-CSRF-Without-Token: 1
+# X-Airbnb-GraphQL-Platform: web
+# X-Airbnb-GraphQL-Platform-Client: minimalist-niobe
+# X-Niobe-Short-Circuited: True
+# x-client-request-id: 1ddg1b70v218pv0i2cbe11clxo85
+# Origin: https://www.airbnb.ru
+# Sec-Fetch-Dest: empty
+# Sec-Fetch-Mode: cors
+# Sec-Fetch-Site: same-origin
+# Referer: https://www.airbnb.ru/s/Antalya/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&date_picker_type=calendar&checkin=2022-12-01&checkout=2022-12-31&adults=1&source=structured_search_input_header&search_type=filter_change&price_filter_num_nights=30&query=Antalya&price_max=248&flexible_trip_lengths%5B%5D=one_month&flexible_trip_dates%5B%5D=november&drawer_open=False
+# Connection: keep-alive
+# Cookie: frmfctr=wide; cfrmfctr=DESKTOP; previousTab=%7B%22id%22%3A%222cde734f-f3b1-491f-abbf-ed2e6bb1ad6f%22%2C%22url%22%3A%22https%3A%2F%2Fwww.airbnb.ru%2Fs%2FAntalya%2Fhomes%3Ftab_id%3Dhome_tab%26refinement_paths%255B%255D%3D%252Fhomes%26date_picker_type%3Dcalendar%26checkin%3D2022-12-01%26checkout%3D2022-12-31%26adults%3D1%26source%3Dstructured_search_input_header%26search_type%3Dfilter_change%26price_filter_num_nights%3D30%26query%3DAntalya%26price_max%3D96%26price_min%3D1%26flexible_trip_lengths%255B%255D%3Done_month%26flexible_trip_dates%255B%255D%3Dnovember%26drawer_open%3DFalse%22%7D; bev=1667318188_OGJkMjMwOTRhYmFj; jitney_client_session_id=a5b226d7-3dd0-44d4-8433-0e0ecdff7707; jitney_client_session_created_at=1667318196; jitney_client_session_updated_at=1667318196
+# TE: trailers'''
 # will be added by scrapy
 # Content-Length: 2106
 
