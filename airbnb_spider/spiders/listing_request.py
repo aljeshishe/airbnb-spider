@@ -15,8 +15,7 @@ class ListingRequest(RequestBase):
     def parse(self, response: scrapy.http.Response):
         data = json.loads(response.text)
 
-        expr = jsonpath_ng.parse(
-            "$.data.presentation.explore.sections.sectionIndependentData.staysSearch.searchResults[*]")
+        expr = jsonpath_ng.parse("$.data.presentation.explore.sections.sectionIndependentData.staysSearch.searchResults[*]")
         items = expr.find(data)
         log.info(f"{self}: Got {len(items)} items")
         for item in items:
@@ -47,14 +46,3 @@ class ListingRequest(RequestBase):
     def __hash__(self):
         return id(self)
 
-    def __str__(self):
-        d = attr.asdict(self)
-        next_page_cursor = d.pop("next_page_cursor")
-        d["next_page_cursor"] = next_page_cursor[:5] + "..." if next_page_cursor else None
-        d.pop("spider")
-        # place = d.pop("place")
-        # d["place"] = place.query
-        d_str = " ".join(f"{k}={v}" for k, v in d.items() if v is not None)
-        return f"{self.__class__.__name__}({d_str})"
-
-    __repr__ = __str__

@@ -3,6 +3,7 @@ import json
 import logging
 from datetime import date
 
+import attr
 import attrs
 import scrapy
 
@@ -33,7 +34,7 @@ class RequestBase(scrapy.Request):
         log.debug(f'Requesting page:{self.next_page_cursor} {self.min_price=} {self.max_price=} '
                  f'start_date={utils.from_date(self.start_date)} end_date={utils.from_date(self.end_date)}')
 
-        data = copy.deepcopy(constants.STAY_SEARCH_DATA_2)
+        data = json.loads(constants.STAY_SEARCH_DATA_3)
         data["variables"]["staysSearchRequest"]["cursor"] = self.next_page_cursor
         filters = Filters(data["variables"]["staysSearchRequest"]["rawParams"])
         if self.place is not None:
@@ -58,6 +59,7 @@ class RequestBase(scrapy.Request):
 
         super().__init__(url=constants.STAY_SEARCH_URL, method="POST", headers=constants.headers.items(), body=json.dumps(data),
                          callback=self.parse, errback=self.errback)
+        log.debug(f"{self}: created")
 
     def parse(self, response):
         raise NotImplementedError
@@ -69,3 +71,19 @@ class RequestBase(scrapy.Request):
             log.info("Reponse:\n" + response_httprepr(failure.value.response))
         else:
             log.info("No reponseReponse:\n" + response_httprepr(failure.value.response))
+
+    def __str__(self):
+        d = attr.asdict(self)
+        next_page_cursor = d.pop("next_page_cursor")
+        d["next_page_cursor"] = next_page_cursor[:5] + "..." if next_page_cursor else None
+        d.pop("spider", None)
+        d.pop("place", None)
+        d.pop("bbox", None)
+        if self.place is not None:
+            d["place"] = self.place.query
+        if self.bbox is not None:
+            d["bbox"] = str(self.bbox)
+        d_str = " ".join(f"{k}={v}" for k, v in d.items() if v is not None)
+        return f"{self.__class__.__name__}({d_str})"
+
+    __repr__ = __str__

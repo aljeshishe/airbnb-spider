@@ -1,12 +1,12 @@
 import email
 
 # headers for no account
-headers_str = '''Host: www.airbnb.ru
+headers_str = '''Host: www.airbnb.com
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Content-Type: application/json
-Referer: https://www.airbnb.ru/s/Ka%C5%9F-Antalya/homes?refinement_paths%5B%5D=%2Fhomes&checkin=2023-01-23&checkout=2023-01-29&date_picker_type=calendar&adults=1&search_type=user_map_move&tab_id=home_tab&query=Ka%C5%9F%20Antalya&flexible_trip_lengths%5B%5D=one_week&price_filter_input_type=2&price_filter_num_nights=6&ne_lat=36.744556081110574&ne_lng=30.27026731365808&sw_lat=35.55217688394924&sw_lng=29.77027497099229&zoom=10&search_by_map=true&place_id=ChIJTc8GpVTawRQRs03Lsy9Qv88
+Referer: https://www.airbnb.com/s/Turkey/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&price_filter_input_type=0&price_filter_num_nights=7&date_picker_type=calendar&checkin=2023-01-08&checkout=2023-01-15&adults=1&source=structured_search_input_header&search_type=autocomplete_click&query=Turkey&place_id=ChIJcSZPllwVsBQRKl9iKtTb2UA
 X-Airbnb-Supports-Airlock-V2: true
 X-Airbnb-API-Key: d306zoyjsyarp7ifhu67rjxn52tv0t20
 X-CSRF-Token: null
@@ -14,13 +14,14 @@ X-CSRF-Without-Token: 1
 X-Airbnb-GraphQL-Platform: web
 X-Airbnb-GraphQL-Platform-Client: minimalist-niobe
 X-Niobe-Short-Circuited: true
-x-client-request-id: 0bpcxol0wwsf421qkkk4e0ie08i3
-Origin: https://www.airbnb.ru
+x-client-request-id: 13a8kjt0p1depu1r653r80iqzgpk
+Origin: https://www.airbnb.com
 Sec-Fetch-Dest: empty
 Sec-Fetch-Mode: cors
 Sec-Fetch-Site: same-origin
 Connection: keep-alive
-Cookie: bev=1671580416_OTkyNTYyNGIzZTNi; jitney_client_session_id=230b9097-cb9b-48f3-a633-b2f1acf768ad; jitney_client_session_created_at=1671580417; jitney_client_session_updated_at=1671580417; ak_bmsc=F1A4310D266CB957FC582E27F1D716EE~000000000000000000000000000000~YAAQN8ETAk5GIRyFAQAAKf70MRLAiwKJuIwYFojKcTfxEbIpS9n3Pz0rAGccHV5xtmHjEsFJCFlklt/9iRhSIPL3SXwO81aohIUWxG+8uP+PIuP+xqnSPBMsz7NGygtje0VzqCrq0BBgue0y7e6rUZsuoamZwEQEK7WAXY1tIqd73bjyZg8AesvJ1rQdkXAOMuDUhvVysFHtyh4v0ozXZG8hdh/HaKGckpkHeWrGDJeqaFNL9M+tfsGzry9vos+JOg61d9iemImtY9mb2GgxFWGBEpCeDcpr9AyZ+pETUuxDAbmvf+q9yl7f9DMy6M9eOpUb/UYDTeIrNiuMBMweEJaEn4r4fxwwAas/JukJ48y5NvkAnYkT5j7nM2399lBli9KPUrD3MQRO; bm_sv=80BF947D540C548911D49A303501EF46~YAAQN8ETAnpGIRyFAQAASwr1MRLz5HisULUh5xdMBj64UdvLT+yZ3QqJX07z4QSYWnDVBM22IX+nqjCLcyqVsus1DakXVIfF8ibtOwTMVlH1JgoKn+vP9sowNirp3Hame9TAER+FgYucokvTrPrdiVdXl+wYaIlK7L9WVX4Mn6I9EWdy9Nqf23T3J4/PMIZiThcubHnFCGrZw3c9zN5uMeYYKM0hR8WL7W5+Qmrfy54BHLdbl7eN5atukl3rbd0=~1
+Alt-Used: www.airbnb.com
+Cookie: bev=1671655677_YzNkOTczZDUyNzQ1; country=TR; ak_bmsc=E6F943BA4714D215376DC57E09D779F6~000000000000000000000000000000~YAAQDARTaIKBWRyFAQAA9V9xNhJeNKYUGn7ZWESemVkfND10A0dpwmLPqTV10LSNRSvfnf3ryhak5aeCR3XbBaEKwJNLjh9Yo1tHYzNYvZRSyuPqFhGNGksMYLQ+6o72YXHnTOdfmUA9TCHzIQZzX9LnR7Kwsp6M2k4T3Pg9mQnxq2Vuwkwu1VjHyuSpRdrnHVkSqiYCJPcywUIlbs9uJA1xknyugavATS/0zVRWp9wQ2rdSh0MY0Wl4Y9blSEZ+IjrFVR+tBYeFz0A0UYn+aQp9FifBMns78mMsr3qGvDEDBO34JhT9iGmBGhPNA1TRb7MpFkKflKSZogV2RYzCZvBcA00jPA9+R6omNC0gpxm4QsgNO4ZX1Hl9IImC; jitney_client_session_updated_at=1671655755; bm_sv=150870D16B9651610CC5FBB5887E4DEA~YAAQDARTaBqTWRyFAQAAFIJyNhJ3ts2jnWp181FuSU112hMtLSdfN3Y4Xn3/iHFQ8SWD1IKZI+klXoEoL2PSAcDDDxqMpZw7/6wCzqT3vgfUnvru0KG3bbSe6t+Yfn1Z4zjORzTVHM25MALQ1Uswfu95C6hJx648+SoTcxvdVytdtTlBm6o5g2bfZ7HAsfiX1lYTh36SFgR7cEAQsKwCVwf7Fh9dDl7+gALwyymCZsPS24tZUUeuHJaCK1hjcq5d~1; _ga_2P6Q8PGG16=GS1.1.1671655650.22.1.1671655693.0.0.0; auth_jitney_session_id=a4d5bf0f-904a-415c-94e4-2ad2e64e8e7a; frmfctr=wide; _airbed_session_id=d73c48bb1f5ffaaf9729c0c25ad378cc
 TE: trailers'''
 
 # headers for my account
@@ -165,6 +166,9 @@ STAY_SEARCH_DATA_2 = {"operationName": "StaysSearch",
                                     "staysSearchM2Enabled": True, "staysSearchM3Enabled": False,
                                     "staysSearchM6Enabled": False}, "extensions": {"persistedQuery": {"version": 1,
                                                                                                       "sha256Hash": "a85197ef4d7ce47444c6e49baf9405185443a687c6c58f80b849b8aba5a5c3a9"}}}
+STAY_SEARCH_DATA_3 = """
+{"operationName": "StaysSearch", "variables": {"isInitialLoad": true, "hasLoggedIn": false, "cdnCacheSafe": false, "source": "EXPLORE", "staysSearchRequest": {"requestedPageType": "STAYS_SEARCH", "metadataOnly": false, "source": "structured_search_input_header", "searchType": "user_map_move", "treatmentFlags": ["decompose_stays_search_m2_treatment", "flex_destinations_june_2021_launch_web_treatment", "new_filter_bar_v2_fm_header", "new_filter_bar_v2_and_fm_treatment", "merch_header_breakpoint_expansion_web", "flexible_dates_12_month_lead_time", "storefronts_nov23_2021_homepage_web_treatment", "lazy_load_flex_search_map_compact", "lazy_load_flex_search_map_wide", "im_flexible_may_2022_treatment", "im_flexible_may_2022_treatment", "flex_v2_review_counts_treatment", "search_add_category_bar_ui_ranking_web", "p2_grid_updates_web_v2", "flexible_dates_options_extend_one_three_seven_days", "super_date_flexibility", "micro_flex_improvements", "micro_flex_show_by_default", "search_input_placeholder_phrases", "pets_fee_treatment"], "rawParams": [{"filterName": "adults", "filterValues": ["1"]}, {"filterName": "cdnCacheSafe", "filterValues": ["false"]}, {"filterName": "checkin", "filterValues": ["2023-01-08"]}, {"filterName": "checkout", "filterValues": ["2023-01-15"]}, {"filterName": "datePickerType", "filterValues": ["calendar"]}, {"filterName": "flexibleTripLengths", "filterValues": ["one_week"]}, {"filterName": "hasLoggedIn", "filterValues": ["false"]}, {"filterName": "isInitialLoad", "filterValues": ["true"]}, {"filterName": "itemsPerGrid", "filterValues": ["18"]}, {"filterName": "neLat", "filterValues": ["39.86100458218273"]}, {"filterName": "neLng", "filterValues": ["32.69370548535008"]}, {"filterName": "placeId", "filterValues": ["ChIJcSZPllwVsBQRKl9iKtTb2UA"]}, {"filterName": "priceFilterInputType", "filterValues": ["0"]}, {"filterName": "priceFilterNumNights", "filterValues": ["7"]}, {"filterName": "query", "filterValues": ["Turkey"]}, {"filterName": "refinementPaths", "filterValues": ["/homes"]}, {"filterName": "screenSize", "filterValues": ["large"]}, {"filterName": "searchByMap", "filterValues": ["true"]}, {"filterName": "swLat", "filterValues": ["38.8415845885673"]}, {"filterName": "swLng", "filterValues": ["32.05800908259917"]}, {"filterName": "tabId", "filterValues": ["home_tab"]}, {"filterName": "version", "filterValues": ["1.8.3"]}]}, "staysSearchM3Enabled": false, "staysSearchM6Enabled": false, "feedMapDecoupleEnabled": false}, "extensions": {"persistedQuery": {"version": 1, "sha256Hash": "72906bd6e5a6f41a04b391adadfb287106ea9209c6a2078d82d6568310d143e7"}}}
+"""
 
 AUTO_COMPLETE_URL = 'https://www.airbnb.com/api/v2/autocompletes?country=TR&key=d306zoyjsyarp7ifhu67rjxn52tv0t20&' \
                     'language=en&locale=en-GB&num_results=5&user_input={query}&api_version=1.2.0&' \
@@ -172,4 +176,4 @@ AUTO_COMPLETE_URL = 'https://www.airbnb.com/api/v2/autocompletes?country=TR&key=
                     'region=-1&options=should_filter_by_vertical_refinement|hide_nav_results|' \
                     'should_show_stays|simple_search|flex_destinations_june_2021_launch_web_treatment'
 
-STAY_SEARCH_URL = 'https://www.airbnb.ru/api/v3/StaysSearch?operationName=StaysSearch&locale=en&currency=USD'
+STAY_SEARCH_URL = 'https://www.airbnb.com/api/v3/StaysSearch?operationName=StaysSearch&locale=en&currency=USD'

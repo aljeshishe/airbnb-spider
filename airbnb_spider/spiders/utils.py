@@ -2,7 +2,10 @@ import datetime
 import itertools
 from collections import deque
 from datetime import date, timedelta
+from itertools import tee
 from typing import Dict, Any
+
+import numpy as np
 
 
 def dates(start_date, days):
@@ -58,3 +61,10 @@ def iterate_prices(start, end, step):
     for i, j in zip(it1, it2):
         yield i, j
     yield j, None
+
+
+def gen_ranges(start, end, steps):
+    g1, g2 = tee(np.linspace(start, end, steps + 1, endpoint=True))
+    next(g2)
+    for start, end in zip(g1, g2):
+        yield start, end
