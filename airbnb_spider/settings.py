@@ -11,10 +11,18 @@ BOT_NAME = 'airbnb_spider'
 
 SPIDER_MODULES = ['airbnb_spider.spiders']
 NEWSPIDER_MODULE = 'airbnb_spider.spiders'
-CONCURRENT_REQUESTS = 10
-FEED_EXPORT_BATCH_ITEM_COUNT = 100
+CONCURRENT_REQUESTS_PER_DOMAIN = 1
+CONCURRENT_REQUESTS_PER_IP = 1
+CONCURRENT_REQUESTS = 1
+DOWNLOAD_DELAY = 3
+LOGSTATS_INTERVAL = 10
+
+# FEED_EXPORT_BATCH_ITEM_COUNT = 100
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'airbnb_spider (+http://www.yourdomain.com)'
+FEEDS = {
+    "items.json": {"format": "jsonl"},
+}
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -63,9 +71,9 @@ REQUEST_RESPONSE_BODY_DEBUG = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'airbnb_spider.pipelines.AirbnbSpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'airbnb_spider.pipelines.ResultsDirPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
