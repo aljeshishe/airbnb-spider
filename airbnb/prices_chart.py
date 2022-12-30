@@ -13,7 +13,7 @@ def create(df: pd.DataFrame) -> go.Figure:
             # "template": template,
             "barmode": "overlay",
             "selectionrevision": True,
-            "height": 300,
+            "height": 150,
             "margin": {"l": 10, "r": 10, "t": 10, "b": 10},
             "xaxis": {
                 "autorange": True,
