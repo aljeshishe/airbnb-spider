@@ -36,6 +36,7 @@ def enrich_df(df: pd.DataFrame) -> pd.DataFrame:
         str.replace("[^\d]", "", regex=True).\
         astype(float)
     df["discount"] = ((1 - price / original_price) * 100).round(decimals=1)
+    df["discount"] = df["discount"].fillna(value=0)
 
     df["new_place"] = df["listing_avgRatingLocalized"] == "New"
     df["listing_avgRatingLocalized"].replace("New", float("nan"), inplace=True, regex=True)
