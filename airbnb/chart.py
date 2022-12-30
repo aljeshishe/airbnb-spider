@@ -5,11 +5,13 @@ px.set_mapbox_access_token(
 
 
 def create_chart(df):
+    mean_lat = df["listing_coordinate_latitude"].mean()
+    mean_lng = df["listing_coordinate_longitude"].mean()
     fig = px.scatter_mapbox(df,
                             lat="listing_coordinate_latitude", lon="listing_coordinate_longitude",
                             color="price",
                             size="rating",
-                            center=dict(lat=36.854598, lon=28.261513), zoom=5,
+                            center=dict(lat=mean_lat, lon=mean_lng), zoom=5,
                             size_max=10,
                             # color_continuous_scale="sunset",
                             color_continuous_scale=["rgb(248, 160, 126)", "rgb(92, 83, 165)"],
