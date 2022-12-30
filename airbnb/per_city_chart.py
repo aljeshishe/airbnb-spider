@@ -13,4 +13,6 @@ def create(df):
                             # custom_data=["listing_id"],
                             hover_data=["listing_city", "count"],
                             height=1000)
+    fig.update_layout({"margin": {"l": 10, "r": 10, "t": 10, "b": 10}}, uirevision="Don't change")
     return fig
+
