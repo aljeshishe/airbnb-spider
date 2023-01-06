@@ -8,7 +8,7 @@ from tqdm import tqdm
 def read_pickle_dir(path: Union[str, Path]) -> pd.DataFrame:
     path = Path(path) if isinstance(path, str) else path
     assert path.is_dir(), f"Expected a directory, got {path}"
-    df = pd.concat([pd.read_pickle(file) for file in tqdm(list(path.glob(pattern="*.*")))], axis=0)
+    df = pd.concat((pd.read_pickle(file) for file in tqdm(list(path.glob(pattern="*.*")))), axis=0, ignore_index=True, copy=False)
     return df
 
 
@@ -48,7 +48,11 @@ def enrich_df(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def load(path: str) -> pd.DataFrame:
-    df = read_pickle_dir(path)
+    path = path if isinstance(path, Path) else Path(path)
+    if path.is_dir():
+        df = read_pickle_dir(path)
+    else:
+        df = pd.read_pickle(path)
     df = delete_duplicates(df)
     df = df.dropna(subset=["listing_id"])
     df = enrich_df(df)
