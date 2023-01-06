@@ -1,31 +1,38 @@
 import logging
-import sys
 
+import attr
 import scrapy
+
 from airbnb_spider.spiders import utils
 from airbnb_spider.spiders.bbox import BBox
-from airbnb_spider.spiders.get_prices_request import GetPricesRequest
-
-
 # v.platformTrust = lambda: None
-from airbnb_spider.spiders.utils import gen_ranges
+from airbnb_spider.spiders.listing_request import ListingRequest
 
 log = logging.getLogger(__name__)
 
 
+@attr.define
+class Params:
+    start_date: str = attr.field(converter=utils.to_date)
+    end_date: str = attr.field(converter=utils.to_date)
+    bbox: BBox
+
+
 class AirbnbSpider(scrapy.Spider):
+    DEFAULT_PARAMS = Params(start_date="2023-02-01", end_date="2023-02-07",
+                            # bbox=BBox(-7.710992,-21.093750,71.357067,157.148438) # all except USA, australia
+                            bbox=BBox(38.873929,39.396973,43.628123,50.866699) # georgia armenia azerbaijan
+                            # bbox=BBox(34.157095, 32.000526, 35.890134, 34.859832) # cyprus
+                            )
     name = 'airbnb'
 
-    def start_requests(self):
-        start_date = utils.to_date("2023-02-01")
-        end_date = utils.to_date("2023-02-07")
-        sw = (36.081554, 26.389847)
-        ne = (41.765636, 44.437553)
-        steps = 100
-        for sw_lat, ne_lat in gen_ranges(sw[0], ne[0], steps=steps):
-            for sw_lng, ne_lng in gen_ranges(sw[1], ne[1], steps=steps):
-                bbox = BBox(sw_lat=sw_lat, sw_lng=sw_lng, ne_lat=ne_lat, ne_lng=ne_lng)
-                log.info(f"Requesting {bbox=}\nhttps://www.google.com/maps/search/{sw_lat},{sw_lng}\nhttps://www.google.com/maps/search/{ne_lat},{ne_lng}")
+    def __init__(self, params: Params, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.params = params
 
-                for _start_date, _end_date in utils.dates_generator(start_date=start_date, end_date=end_date):
-                    yield GetPricesRequest(spider=self, bbox=bbox, start_date=_start_date, end_date=_end_date)
+    def start_requests(self):
+        log.info(f"Requesting {self.params.bbox}")
+
+        for _start_date, _end_date in utils.dates_generator(start_date=self.params.start_date,
+                                                            end_date=self.params.end_date):
+            yield ListingRequest(spider=self, bbox=self.params.bbox, start_date=_start_date, end_date=_end_date)

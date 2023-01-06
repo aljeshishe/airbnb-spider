@@ -12,7 +12,7 @@ class BBox:
     ne_lng: float
 
     def __str__(self):
-        return f"{self.__class__.__name__}({self.sw_lat:.6f},{self.sw_lng:.6f},{self.ne_lat:.6f},{self.ne_lng:.6f})"
+        return f"{self.__class__.__name__}(http://bboxfinder.com/#{self.sw_lat},{self.sw_lng},{self.ne_lat},{self.ne_lng})"
 
     __repr__ = __str__
 

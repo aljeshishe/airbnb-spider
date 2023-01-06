@@ -58,7 +58,7 @@ class GetPricesRequest(RequestBase):
         if not items:
             return 0
 
-        if items[0].value == "Over 1,000 homes":
+        if "over" in items[0].value.lower():
             return 1001
 
         assert len(items) == 1, f"Expected 1 item, got {len(items)}"

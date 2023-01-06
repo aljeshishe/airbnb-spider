@@ -1,4 +1,5 @@
 import json
+import re
 from typing import Any, Dict
 
 import attr
@@ -7,13 +8,29 @@ import jsonpath_ng
 import scrapy
 
 from airbnb_spider.spiders import utils
+from airbnb_spider.spiders.bbox import BBox
 from airbnb_spider.spiders.request import RequestBase, log
 
 
 @attr.define
 class ListingRequest(RequestBase):
     def parse(self, response: scrapy.http.Response):
-        data = json.loads(response.text)
+        data = response.json()
+
+        expected_items_count = self._get_items_count(data=data)
+        log.info(f"{self}: {expected_items_count=}")
+        if expected_items_count == 0:
+            log.debug(f"{self}: No items found")
+            return
+        if expected_items_count > 600:
+            steps = 4
+            for sw_lat, ne_lat in utils.gen_ranges(self.bbox.sw_lat, self.bbox.ne_lat, steps=steps):
+                for sw_lng, ne_lng in utils.gen_ranges(self.bbox.sw_lng, self.bbox.ne_lng, steps=steps):
+                    bbox = BBox(sw_lat=sw_lat, sw_lng=sw_lng, ne_lat=ne_lat, ne_lng=ne_lng)
+                    log.info(f"Requesting {bbox=}")
+                    new_request = attrs.evolve(self, bbox=bbox)
+                    yield new_request
+            return
 
         expr = jsonpath_ng.parse("$.data.presentation.explore.sections.sectionIndependentData.staysSearch.searchResults[*]")
         items = expr.find(data)
@@ -42,6 +59,20 @@ class ListingRequest(RequestBase):
         item["place_name"] = self.place.query if self.place is not None else ""
         item.update(kwargs)
         return item
+
+    def _get_items_count(self, data):
+        path = "$.data.presentation.explore.sections.sectionIndependentData.staysSearch.sectionConfiguration.pageTitleSections.sections[*].sectionData.structuredTitle"
+        items = jsonpath_ng.parse(path).find(data)
+        if not items:
+            return 0
+
+        if "over" in items[0].value.lower():
+            return 1001
+
+        assert len(items) == 1, f"Expected 1 item, got {len(items)}"
+        result = re.match(r"(\d+) homes", items[0].value)
+        assert result is not None, f"Cant parse {items[0].value}"
+        return int(result.group(1))
 
     def __hash__(self):
         return id(self)
