@@ -1,0 +1,2476 @@
+{
+  "data": {
+    "presentation": {
+      "__typename": "RootPresentationContainer",
+      "stayProductDetailPage": {
+        "__typename": "StayPDPPresentationContainer",
+        "sections": {
+          "__typename": "StayPDPSections",
+          "sections": [
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjotNTUzMDQ0NjU0MjYxOTQxOTM2Ng==",
+              "sectionComponentType": "BOOK_IT_CALENDAR_SHEET",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "BOOK_IT_CALENDAR_SHEET",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.book_it_calendar_sheet",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "BOOK_IT_CALENDAR_SHEET",
+              "section": {
+                "__typename": "BookItSection",
+                "subpageIdToOpen": null,
+                "showPriceBreakdown": false,
+                "cancellationPolicyLoggingEventData": null,
+                "calendarTitle": null,
+                "calendarSubtitle": null,
+                "descriptionItems": null,
+                "discountCopy": null,
+                "maxGuestCapacity": null,
+                "maxPlusValue": null,
+                "tripDetailsLoggingEventData": null,
+                "reviewItem": null,
+                "available": true,
+                "structuredDisplayPrice": {
+                  "__typename": "StructuredDisplayPrice",
+                  "primaryLine": {
+                    "__typename": "QualifiedDisplayPriceLine",
+                    "displayComponentType": "QUALIFIED_DISPLAY_PRICE_LINE",
+                    "accessibilityLabel": "$230 за ночь",
+                    "price": "$230",
+                    "qualifier": "ночь",
+                    "shortQualifier": "ночь",
+                    "concatQualifierLeft": false,
+                    "trailingContent": null
+                  },
+                  "secondaryLine": null,
+                  "explanationData": null,
+                  "explanationDataDisplayPosition": null,
+                  "explanationDataDisplayPriceTriggerType": null,
+                  "layout": "COLUMN"
+                },
+                "discountData": null,
+                "bookItButtonByPlacement": {
+                  "__typename": "BookItButtonByPlacement",
+                  "footerButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "sideBarButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.sideBar.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "sideBar",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "stickyNavButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyNav.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyNav",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "calendarFooterButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Сохранить",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.save",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "save"
+                    },
+                    "button": null
+                  }
+                },
+                "cancellationPolicies": null,
+                "cancellationPolicyForDisplay": null,
+                "localizedUnavailabilityMessage": null,
+                "localizedUnavailabilityMessagePositionString": null,
+                "priceDisclaimer": null,
+                "selectedDatesLink": null,
+                "selectedNights": null,
+                "bookItButtonLayout": null,
+                "productItemDetail": null,
+                "ratePlanLoggingEventData": null,
+                "ratePlanTitle": null,
+                "promotionBanner": null,
+                "guestDisclaimer": "Жилье рассчитано максимум на 8 гостей, не считая младенцев. Проживание с питомцами не разрешается.",
+                "petsAllowed": false,
+                "petDetails": {
+                  "__typename": "GuestPickerPetDetails",
+                  "maxPetCount": 0,
+                  "petDisclaimerText": "Путешествуете с животным-помощником?",
+                  "petSubtitleAction": {
+                    "__typename": "NavigateToScreen",
+                    "loggingData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.bookItCalendarSheet.petModal",
+                      "experiments": [],
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "bookItCalendarSheet",
+                      "component": "petModal"
+                    },
+                    "url": null,
+                    "screenId": "WHAT_COUNTS_AS_A_PET_MODAL",
+                    "itemId": null
+                  }
+                }
+              }
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjozMDY1OTMzNTkyNDY4Mjc4NzA3",
+              "sectionComponentType": "BOOK_IT_FLOATING_FOOTER",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "BOOK_IT_FLOATING_FOOTER",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.book_it_floating_footer",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "BOOK_IT_FLOATING_FOOTER",
+              "section": {
+                "__typename": "BookItSection",
+                "subpageIdToOpen": null,
+                "showPriceBreakdown": false,
+                "cancellationPolicyLoggingEventData": null,
+                "calendarTitle": null,
+                "calendarSubtitle": null,
+                "descriptionItems": null,
+                "discountCopy": null,
+                "maxGuestCapacity": null,
+                "maxPlusValue": null,
+                "tripDetailsLoggingEventData": null,
+                "reviewItem": null,
+                "available": true,
+                "structuredDisplayPrice": {
+                  "__typename": "StructuredDisplayPrice",
+                  "primaryLine": {
+                    "__typename": "QualifiedDisplayPriceLine",
+                    "displayComponentType": "QUALIFIED_DISPLAY_PRICE_LINE",
+                    "accessibilityLabel": "$230 за ночь",
+                    "price": "$230",
+                    "qualifier": "ночь",
+                    "shortQualifier": "ночь",
+                    "concatQualifierLeft": false,
+                    "trailingContent": null
+                  },
+                  "secondaryLine": null,
+                  "explanationData": null,
+                  "explanationDataDisplayPosition": null,
+                  "explanationDataDisplayPriceTriggerType": null,
+                  "layout": "COLUMN"
+                },
+                "discountData": null,
+                "bookItButtonByPlacement": {
+                  "__typename": "BookItButtonByPlacement",
+                  "footerButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "sideBarButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.sideBar.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "sideBar",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "stickyNavButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyNav.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyNav",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "calendarFooterButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Сохранить",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.save",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "save"
+                    },
+                    "button": null
+                  }
+                },
+                "cancellationPolicies": null,
+                "cancellationPolicyForDisplay": null,
+                "localizedUnavailabilityMessage": null,
+                "localizedUnavailabilityMessagePositionString": null,
+                "priceDisclaimer": null,
+                "selectedDatesLink": null,
+                "selectedNights": null,
+                "bookItButtonLayout": null,
+                "productItemDetail": null,
+                "ratePlanLoggingEventData": null,
+                "ratePlanTitle": null,
+                "promotionBanner": null,
+                "guestDisclaimer": null,
+                "petsAllowed": null,
+                "petDetails": null
+              }
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjo1NTIyMTA0NzM3NDgzNzk1MDc4",
+              "sectionComponentType": "EDUCATION_FOOTER_BANNER_MODAL",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "EDUCATION_FOOTER_BANNER_MODAL",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.education_footer_banner_modal",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "EDUCATION_FOOTER_BANNER_MODAL",
+              "section": {
+                "__typename": "EducationFooterBannerSection",
+                "pdpEducationContentData": null
+              }
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjo0NDQ1MzE5MTkzODc4NDE1MTk2",
+              "sectionComponentType": "POLICIES_DEFAULT",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "POLICIES_DEFAULT",
+              "errors": null,
+              "sectionDependencies": [
+                "CHECK_IN",
+                "CHECK_OUT",
+                "TRANSLATE_UGC",
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.policies_default",
+                "experiments": [
+                  {
+                    "__typename": "Experiment",
+                    "experiment": "stays_consistent_show_more_links_web_v3",
+                    "treatment": "treatment",
+                    "dontLogOnFormFactor": null
+                  }
+                ],
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "POLICIES_DEFAULT",
+              "section": {
+                "__typename": "PoliciesSection",
+                "title": "Важная информация",
+                "cancellationPolicyForDisplay": {
+                  "__typename": "PdpCancellationPolicy",
+                  "title": null,
+                  "subtitles": [
+                    "Укажите даты, чтобы посмотреть условия отмены."
+                  ],
+                  "milestones": [],
+                  "seeDetailsLink": {
+                    "__typename": "BasicListItem",
+                    "title": "Получить полную информацию",
+                    "anchor": "/help/article/2637"
+                  },
+                  "cancellationMilestoneModal": {
+                    "__typename": "CancellationMilestoneModal",
+                    "title": null,
+                    "subtitles": null,
+                    "header": null,
+                    "actionLinkText": null,
+                    "actionLinkUrl": null,
+                    "entries": null
+                  },
+                  "cancellationMilestoneModalV2": null
+                },
+                "additionalHouseRules": "Домашние животные: Не допускается\nПолотенца: Присутствует\n\nПо соображениям спокойствия проживание групп лиц моложе 25  лет не допускается.\nЭтот дом для отдыха сдается в аренду только для туристов. Если вы хотите забронировать его для других целей, свяжитесь с виллой.",
+                "additionalHouseRulesTitle": "Дополнительные правила",
+                "cancellationPolicyTitle": "Правила отмены",
+                "houseRulesTitle": "Правила дома",
+                "listingExpectationsTitle": null,
+                "safetyAndPropertyTitle": "Безопасность и жилье",
+                "houseRules": [
+                  {
+                    "__typename": "BasicListItem",
+                    "icon": null,
+                    "title": "Время прибытия: с 16:00 до 18:00"
+                  },
+                  {
+                    "__typename": "BasicListItem",
+                    "icon": null,
+                    "title": "Выезд до 09:00"
+                  },
+                  {
+                    "__typename": "BasicListItem",
+                    "icon": null,
+                    "title": "Максимум 8 гостей"
+                  }
+                ],
+                "listingExpectations": null,
+                "previewSafetyAndProperties": [
+                  {
+                    "__typename": "SafetyAndPropertyInfo",
+                    "title": "Датчик угарного газа",
+                    "icon": null,
+                    "learnMoreButton": null
+                  },
+                  {
+                    "__typename": "SafetyAndPropertyInfo",
+                    "title": "Датчик дыма",
+                    "icon": null,
+                    "learnMoreButton": null
+                  }
+                ],
+                "safetyExpectationsAndAmenities": null,
+                "seeAllSafetyAndPropertyButton": {
+                  "__typename": "BasicListItem",
+                  "accessibilityLabel": null,
+                  "title": "Показать еще",
+                  "loggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.policies.showAllSafetyAndProperty",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": null,
+                    "component": null
+                  }
+                },
+                "seeAllHouseRulesButton": {
+                  "__typename": "BasicListItem",
+                  "accessibilityLabel": null,
+                  "title": "Показать еще",
+                  "loggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.policies.showAllRules",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": null,
+                    "component": null
+                  }
+                },
+                "seeCancellationPolicyButton": {
+                  "__typename": "BasicListItem",
+                  "accessibilityLabel": null,
+                  "title": "Показать еще",
+                  "loggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.policies.showAllCancellations",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": null,
+                    "component": null
+                  }
+                },
+                "reportButton": {
+                  "__typename": "BasicListItem",
+                  "title": "Пожаловаться на объявление",
+                  "icon": null,
+                  "loggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.policies.report",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "policies",
+                    "component": "report"
+                  }
+                },
+                "cleaningModal": null,
+                "documentDisplay": null,
+                "seeDocumentDisplayDetailsButton": null,
+                "documentDisplayPictures": null,
+                "houseRulesSubtitle": "Следуйте этим правилам, чтобы проявить уважение к хозяину и избежать проблем во время проживания.",
+                "houseRulesTranslationDisclaimer": {
+                  "__typename": "BasicListItem",
+                  "title": "Переведено автоматически",
+                  "icon": "COMPACT_TRANSLATE"
+                },
+                "houseRulesSections": [
+                  {
+                    "__typename": "GeneralListContentSection",
+                    "title": "Кто может заселиться",
+                    "items": [
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Максимум 8 гостей",
+                        "subtitle": null,
+                        "icon": "SYSTEM_FAMILY"
+                      },
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Нельзя с питомцами",
+                        "subtitle": null,
+                        "icon": "SYSTEM_NO_PETS"
+                      }
+                    ]
+                  },
+                  {
+                    "__typename": "GeneralListContentSection",
+                    "title": "Что разрешено",
+                    "items": [
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Время прибытия: с 16:00 до 18:00",
+                        "subtitle": null,
+                        "icon": "SYSTEM_CLOCK"
+                      },
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Выезд до 09:00",
+                        "subtitle": null,
+                        "icon": "SYSTEM_CLOCK"
+                      },
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Самостоятельное прибытие (Мини-сейф)",
+                        "subtitle": null,
+                        "icon": "SYSTEM_CHECK_IN"
+                      },
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Без вечеринок и мероприятий",
+                        "subtitle": null,
+                        "icon": "SYSTEM_NO_EVENTS"
+                      },
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Курение запрещено",
+                        "subtitle": null,
+                        "icon": "SYSTEM_SMOKING_NOT_ALLOWED"
+                      }
+                    ]
+                  }
+                ],
+                "safetyAndPropertySubtitle": "Изучите важную информацию о жилье, чтобы избежать сюрпризов.",
+                "safetyAndPropertiesTranslationDisclaimer": null,
+                "safetyAndPropertiesSections": [
+                  {
+                    "__typename": "GeneralListContentSection",
+                    "title": "Защитные устройства",
+                    "items": [
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Установлен датчик угарного газа",
+                        "subtitle": null,
+                        "icon": "SYSTEM_DETECTOR_CO"
+                      },
+                      {
+                        "__typename": "BasicListItem",
+                        "title": "Установлен датчик дыма",
+                        "subtitle": null,
+                        "icon": "SYSTEM_DETECTOR_SMOKE"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjoyMTkyNjEyODA4Njk3OTY3OTU0",
+              "sectionComponentType": "BOOK_IT_SIDEBAR",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "BOOK_IT_SIDEBAR",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.book_it_sidebar",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "BOOK_IT_SIDEBAR",
+              "section": {
+                "__typename": "BookItSection",
+                "subpageIdToOpen": null,
+                "showPriceBreakdown": true,
+                "cancellationPolicyLoggingEventData": {
+                  "__typename": "LoggingEventData",
+                  "loggingId": "pdp.bookItSidebar.cancellationPolicyInput",
+                  "experiments": null,
+                  "eventData": null,
+                  "eventDataSchemaName": null,
+                  "section": null,
+                  "component": null
+                },
+                "calendarTitle": "Выберите даты",
+                "calendarSubtitle": "Чтобы увидеть цену, укажите даты поездки",
+                "descriptionItems": null,
+                "discountCopy": null,
+                "maxGuestCapacity": 8,
+                "maxPlusValue": 16,
+                "tripDetailsLoggingEventData": {
+                  "__typename": "CalendarLoggingEventData",
+                  "clearDatesButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Сбросить даты",
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.bookItSidebar.clearDates",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "bookItSidebar",
+                      "component": "clearDates"
+                    }
+                  },
+                  "saveDatesButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Закрыть",
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.bookItSidebar.saveDates",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "bookItSidebar",
+                      "component": "saveDates"
+                    }
+                  },
+                  "datesInputLoggingEventData": null,
+                  "selectDateLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.selectDate",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "selectDate"
+                  },
+                  "previousMonthLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.monthsNavPrevious",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "monthsNavPrevious"
+                  },
+                  "nextMonthLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.monthsNavNext",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "monthsNavNext"
+                  },
+                  "checkInDateInputLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.checkInInput",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "checkInInput"
+                  },
+                  "checkOutDateInputLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.checkOutInput",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "checkOutInput"
+                  },
+                  "guestInputLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.guestInput",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "guestInput"
+                  },
+                  "cancellationPolicyLoggingEventData": null,
+                  "changeDatesButtonLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.changeDatesButton",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "changeDatesButton"
+                  },
+                  "selectCheckOutOnlyDateLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.selectCheckOutOnlyDate",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "selectCheckOutOnlyDate"
+                  },
+                  "selectMaxNightsViolationDateLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.selectMaxNightsViolationDate",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "selectMaxNightsViolationDate"
+                  },
+                  "selectMinNightsViolationDateLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.selectMinNightsViolationDate",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "selectMinNightsViolationDate"
+                  },
+                  "selectUnavailableForCheckInDateLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.selectUnavailableForCheckInDate",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "selectUnavailableForCheckInDate"
+                  },
+                  "selectUnavailableForCheckoutDateLoggingEventData": {
+                    "__typename": "LoggingEventData",
+                    "loggingId": "pdp.bookItSidebar.selectUnavailableForCheckoutDate",
+                    "experiments": null,
+                    "eventData": null,
+                    "eventDataSchemaName": null,
+                    "section": "bookItSidebar",
+                    "component": "selectUnavailableForCheckoutDate"
+                  }
+                },
+                "reviewItem": null,
+                "available": true,
+                "structuredDisplayPrice": {
+                  "__typename": "StructuredDisplayPrice",
+                  "primaryLine": {
+                    "__typename": "QualifiedDisplayPriceLine",
+                    "displayComponentType": "QUALIFIED_DISPLAY_PRICE_LINE",
+                    "accessibilityLabel": "$230 за ночь",
+                    "price": "$230",
+                    "qualifier": "ночь",
+                    "shortQualifier": "ночь",
+                    "concatQualifierLeft": false,
+                    "trailingContent": null
+                  },
+                  "secondaryLine": null,
+                  "explanationData": null,
+                  "explanationDataDisplayPosition": null,
+                  "explanationDataDisplayPriceTriggerType": null,
+                  "layout": "COLUMN"
+                },
+                "discountData": null,
+                "bookItButtonByPlacement": {
+                  "__typename": "BookItButtonByPlacement",
+                  "footerButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "sideBarButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.sideBar.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "sideBar",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "stickyNavButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyNav.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyNav",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "calendarFooterButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Сохранить",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.save",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "save"
+                    },
+                    "button": null
+                  }
+                },
+                "cancellationPolicies": null,
+                "cancellationPolicyForDisplay": null,
+                "localizedUnavailabilityMessage": null,
+                "localizedUnavailabilityMessagePositionString": null,
+                "priceDisclaimer": null,
+                "selectedDatesLink": null,
+                "selectedNights": null,
+                "bookItButtonLayout": null,
+                "productItemDetail": {
+                  "__typename": "BasicPriceDetail",
+                  "explanationData": null
+                },
+                "ratePlanLoggingEventData": {
+                  "__typename": "LoggingEventData",
+                  "loggingId": "pdp.bookItSidebar.ratePlanInput",
+                  "experiments": null,
+                  "eventData": null,
+                  "eventDataSchemaName": null,
+                  "section": null,
+                  "component": null
+                },
+                "ratePlanTitle": null,
+                "promotionBanner": null,
+                "guestDisclaimer": "Жилье рассчитано максимум на 8 гостей, не считая младенцев. Проживание с питомцами не разрешается.",
+                "petsAllowed": false,
+                "petDetails": {
+                  "__typename": "GuestPickerPetDetails",
+                  "maxPetCount": 0,
+                  "petDisclaimerText": "Путешествуете с животным-помощником?",
+                  "petSubtitleAction": {
+                    "__typename": "NavigateToScreen",
+                    "loggingData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.bookItSidebar.petModal",
+                      "experiments": [],
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "bookItSidebar",
+                      "component": "petModal"
+                    },
+                    "url": null,
+                    "screenId": "WHAT_COUNTS_AS_A_PET_MODAL",
+                    "itemId": null
+                  }
+                }
+              }
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjotNzUzMjM3ODQ5MTU4NzM4MjkwNA==",
+              "sectionComponentType": "URGENCY_COMMITMENT",
+              "sectionContentStatus": "SHOULD_HIDE",
+              "sectionId": "URGENCY_COMMITMENT_SIDEBAR",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.urgency_commitment_sidebar",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "URGENCY_COMMITMENT_SIDEBAR",
+              "section": null
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjo5MDYyNTc0NzMzMDUxNTQ0Mzc2",
+              "sectionComponentType": "BOOK_IT_NAV",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "BOOK_IT_NAV",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.book_it_nav",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "BOOK_IT_NAV",
+              "section": {
+                "__typename": "BookItSection",
+                "subpageIdToOpen": null,
+                "showPriceBreakdown": false,
+                "cancellationPolicyLoggingEventData": null,
+                "calendarTitle": null,
+                "calendarSubtitle": null,
+                "descriptionItems": null,
+                "discountCopy": null,
+                "maxGuestCapacity": null,
+                "maxPlusValue": null,
+                "tripDetailsLoggingEventData": null,
+                "reviewItem": null,
+                "available": true,
+                "structuredDisplayPrice": {
+                  "__typename": "StructuredDisplayPrice",
+                  "primaryLine": {
+                    "__typename": "QualifiedDisplayPriceLine",
+                    "displayComponentType": "QUALIFIED_DISPLAY_PRICE_LINE",
+                    "accessibilityLabel": "$230 за ночь",
+                    "price": "$230",
+                    "qualifier": "ночь",
+                    "shortQualifier": "ночь",
+                    "concatQualifierLeft": false,
+                    "trailingContent": null
+                  },
+                  "secondaryLine": null,
+                  "explanationData": null,
+                  "explanationDataDisplayPosition": null,
+                  "explanationDataDisplayPriceTriggerType": null,
+                  "layout": "COLUMN"
+                },
+                "discountData": null,
+                "bookItButtonByPlacement": {
+                  "__typename": "BookItButtonByPlacement",
+                  "footerButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "sideBarButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.sideBar.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "sideBar",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "stickyNavButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Проверить свободные даты",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyNav.openCalendar",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyNav",
+                      "component": "openCalendar"
+                    },
+                    "button": null
+                  },
+                  "calendarFooterButton": {
+                    "__typename": "BasicListItem",
+                    "title": "Сохранить",
+                    "action": null,
+                    "loggingEventData": {
+                      "__typename": "LoggingEventData",
+                      "loggingId": "pdp.stickyFooter.save",
+                      "experiments": null,
+                      "eventData": null,
+                      "eventDataSchemaName": null,
+                      "section": "stickyFooter",
+                      "component": "save"
+                    },
+                    "button": null
+                  }
+                },
+                "cancellationPolicies": null,
+                "cancellationPolicyForDisplay": null,
+                "localizedUnavailabilityMessage": null,
+                "localizedUnavailabilityMessagePositionString": null,
+                "priceDisclaimer": null,
+                "selectedDatesLink": null,
+                "selectedNights": null,
+                "bookItButtonLayout": null,
+                "productItemDetail": null,
+                "ratePlanLoggingEventData": null,
+                "ratePlanTitle": null,
+                "promotionBanner": null,
+                "guestDisclaimer": null,
+                "petsAllowed": null,
+                "petDetails": null
+              }
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjozNjE4MzUzODAyNDA3MTg5Njc=",
+              "sectionComponentType": "EDUCATION_FOOTER_BANNER",
+              "sectionContentStatus": "SHOULD_HIDE",
+              "sectionId": "EDUCATION_FOOTER_BANNER",
+              "errors": null,
+              "sectionDependencies": [
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.education_footer_banner",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "EDUCATION_FOOTER_BANNER",
+              "section": null
+            },
+            {
+              "__typename": "SectionContainer",
+              "id": "U2VjdGlvbkNvbnRhaW5lcjotNDk5NzI5ODA0Mzk4NDg0OTk1",
+              "sectionComponentType": "CANCELLATION_POLICY_PICKER_MODAL",
+              "sectionContentStatus": "COMPLETE",
+              "sectionId": "CANCELLATION_POLICY_PICKER_MODAL",
+              "errors": null,
+              "sectionDependencies": [
+                "CHECK_IN",
+                "CHECK_OUT",
+                "BOOKING"
+              ],
+              "enableDependencies": null,
+              "disableDependencies": null,
+              "loggingData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "pdp_platform.cancellation_policy_picker_modal",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              },
+              "e2eLoggingSession": null,
+              "mutationMetadata": null,
+              "pluginPointId": "CANCELLATION_POLICY_PICKER_MODAL",
+              "section": {
+                "__typename": "CancellationPolicyPickerSection",
+                "title": "Выберите правила отмены бронирования",
+                "button": {
+                  "__typename": "Button",
+                  "title": "Продолжить",
+                  "action": null
+                },
+                "optionalityPriceDetail": null
+              }
+            }
+          ],
+          "sectionsV2": [],
+          "screens": [
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "CALENDAR",
+              "screenProperties": null,
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_CALENDAR_SHEET",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_CALENDAR_SHEET",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "INDIVIDUAL_HOST_PROMPT",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FITTED",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": "Что нужно знать",
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "SPLIT_STAYS_DATE_EDIT_PROMPT",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FITTED",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": "Хотите изменить даты?",
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "AIRCOVER_PDP_MODAL",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "PROFESSIONAL_HOST_DETAILS",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FITTED",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": "Сведения о компании",
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "ENHANCED_CLEANING",
+              "screenProperties": null,
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "PHOTO_TOUR_SCROLLABLE",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "FULL_SCREEN_MODAL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": true
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "ADD_AMENITIES",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "SLIDE_FROM_RIGHT",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "FLOATING_FOOTER",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "FLOATING_FOOTER",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "BUSINESS_DETAILS",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "PHOTO_TOUR_CAROUSEL",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "FULL_SCREEN_MODAL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": true
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "DESCRIPTION",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": "О жилье",
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "WHAT_COUNTS_AS_A_PET_MODAL",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET",
+                "transitionType": null,
+                "modalTitle": "Животные-помощники",
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "ACCESSIBILITY",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "FULL_SCREEN_MODAL",
+                "transitionType": null,
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "EDUCATION",
+              "screenProperties": null,
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "FLOATING_FOOTER",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_FLOATING_FOOTER",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    },
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "EDUCATION_FOOTER_BANNER_MODAL",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "FLOATING_FOOTER",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_FLOATING_FOOTER",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    },
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "EDUCATION_FOOTER_BANNER_MODAL",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "HOST_DESCRIPTION",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "TRANSLATION_PROMPT",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FITTED",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": "Перевод",
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "ROOT",
+              "screenProperties": null,
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "BELOW_SIDEBAR",
+                  "layout": "SIDEBAR",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "POLICIES_DEFAULT",
+                      "divider": {
+                        "__typename": "Divider",
+                        "lineStyle": "THIN",
+                        "lineWidth": "LONG",
+                        "lineColor": null,
+                        "topPadding": null,
+                        "paddingBelowDivider": null
+                      },
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": 48,
+                      "bottomPaddingPoints": 48,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "CONTAINED",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "SIDEBAR",
+                  "layout": "SIDEBAR",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_SIDEBAR",
+                      "divider": null,
+                      "border": {
+                        "__typename": "Border",
+                        "lineStyle": "THIN",
+                        "shadow": "SECONDARY",
+                        "color": null,
+                        "hoverColor": null,
+                        "paddingPoints": 24,
+                        "leftOnly": null,
+                        "rightOnly": null,
+                        "topRounded": null,
+                        "sides": null,
+                        "bottomRounded": null,
+                        "cornerRadiusPoints": null,
+                        "padding": null
+                      },
+                      "topMarginPoints": 48,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    },
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "URGENCY_COMMITMENT_SIDEBAR",
+                      "divider": null,
+                      "border": {
+                        "__typename": "Border",
+                        "lineStyle": "THIN",
+                        "shadow": null,
+                        "color": null,
+                        "hoverColor": null,
+                        "paddingPoints": 24,
+                        "leftOnly": null,
+                        "rightOnly": null,
+                        "topRounded": null,
+                        "sides": null,
+                        "bottomRounded": null,
+                        "cornerRadiusPoints": null,
+                        "padding": null
+                      },
+                      "topMarginPoints": 24,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": {
+                    "__typename": "PlacementStyle",
+                    "backgroundColor": null,
+                    "border": {
+                      "__typename": "Border",
+                      "lineStyle": "NONE",
+                      "shadow": null,
+                      "color": null,
+                      "hoverColor": null,
+                      "paddingPoints": null,
+                      "leftOnly": null,
+                      "rightOnly": null,
+                      "topRounded": null,
+                      "sides": null,
+                      "bottomRounded": null,
+                      "cornerRadiusPoints": null,
+                      "padding": null
+                    },
+                    "bottomMarginPoints": null,
+                    "bottomPadding": null,
+                    "bottomPaddingPoints": 48,
+                    "fixedWidthPoints": null,
+                    "span": 4,
+                    "topMarginPoints": null,
+                    "topPadding": null,
+                    "topPaddingPoints": null
+                  },
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SIDEBAR",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_NAV",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "ALONG_SIDEBAR",
+                  "layout": "SIDEBAR",
+                  "sectionDetails": [],
+                  "style": {
+                    "__typename": "PlacementStyle",
+                    "backgroundColor": null,
+                    "border": null,
+                    "bottomMarginPoints": null,
+                    "bottomPadding": null,
+                    "bottomPaddingPoints": null,
+                    "fixedWidthPoints": null,
+                    "span": 7,
+                    "topMarginPoints": null,
+                    "topPadding": null,
+                    "topPaddingPoints": null
+                  },
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "TOP",
+                  "layout": "SIDEBAR",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "FLOATING_FOOTER",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "BOOK_IT_FLOATING_FOOTER",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": 16,
+                      "bottomPaddingPoints": 16,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": null,
+                      "maxWidth": null
+                    },
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "EDUCATION_FOOTER_BANNER",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": 14,
+                      "bottomPaddingPoints": 14,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": null,
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "NAV",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "POLICIES_DEFAULT",
+                      "divider": {
+                        "__typename": "Divider",
+                        "lineStyle": "THIN",
+                        "lineWidth": "LONG",
+                        "lineColor": null,
+                        "topPadding": null,
+                        "paddingBelowDivider": null
+                      },
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": 24,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "CONTAINED",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "REVIEWS",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "NON_EXPERIENCED_GUEST_LEARN_MORE_MODAL",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "PLUS_EDUCATION_MODAL",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FULL",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": null,
+                "unstyled": null
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            },
+            {
+              "__typename": "ScreenContainer",
+              "screenId": "CANCELLATION_POLICY_PICKER",
+              "screenProperties": {
+                "__typename": "ScreenProperties",
+                "modalType": "CONTEXT_SHEET_FITTED",
+                "transitionType": "CONTEXTUAL_GROW",
+                "modalTitle": "Выберите правила отмены бронирования",
+                "unstyled": true
+              },
+              "e2eLoggingSessions": null,
+              "screenContentStatus": "COMPLETE",
+              "screenContext": null,
+              "onLoadScreenAction": null,
+              "sectionPlacements": [
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "CANCELLATION_POLICY_PICKER_MODAL",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "WIDE",
+                  "mediaType": null
+                },
+                {
+                  "__typename": "SectionPlacement",
+                  "placement": "MAIN",
+                  "layout": "SINGLE_COLUMN",
+                  "sectionDetails": [
+                    {
+                      "__typename": "SectionDetail",
+                      "sectionId": "CANCELLATION_POLICY_PICKER_MODAL",
+                      "divider": null,
+                      "border": null,
+                      "topMarginPoints": null,
+                      "topPaddingPoints": null,
+                      "bottomPaddingPoints": null,
+                      "bottomMarginPoints": null,
+                      "backgroundColorNew": null,
+                      "horizontalPadding": "FULL_WIDTH",
+                      "maxWidth": null
+                    }
+                  ],
+                  "style": null,
+                  "formFactor": "COMPACT",
+                  "mediaType": null
+                }
+              ]
+            }
+          ],
+          "screensV2": [],
+          "flows": [],
+          "metadata": {
+            "__typename": "StayPDPMetadata",
+            "pdpType": "MARKETPLACE",
+            "pdpUrlType": "ROOMS",
+            "pageTitle": null,
+            "misaId": null,
+            "errorData": null,
+            "sharingConfig": {
+              "__typename": "PdpSharingConfig",
+              "title": "Роскошный дом с сауной рядом с Крайшбергом.",
+              "propertyType": "Дом целиком",
+              "location": "St. Lorenzen am Kreischberg",
+              "personCapacity": 8,
+              "imageUrl": "https://a0.muscache.com/pictures/prohost-api/Hosting-583506399130132903/original/8d719a34-00ae-4763-92b4-37c0f52a67d0.jpeg",
+              "pdpLink": "https://www.airbnb.ru/rooms/583506399130132903",
+              "reviewCount": 0,
+              "starRating": 0.0
+            },
+            "loggingContext": {
+              "__typename": "PdpLoggingContext",
+              "eventDataLogging": {
+                "__typename": "PdpEventData",
+                "listingId": "583506399130132903",
+                "page": "p3",
+                "pdpPageType": 1,
+                "listingLat": 47.102871,
+                "listingLng": 14.085165,
+                "homeTier": 1,
+                "bedType": null,
+                "roomType": "Entire home/apt",
+                "personCapacity": 8,
+                "descriptionLanguage": "en",
+                "isSuperhost": false,
+                "pictureCount": 12,
+                "utcOffset": 3600,
+                "amenities": [
+                  64,
+                  1,
+                  33,
+                  34,
+                  35,
+                  4,
+                  36,
+                  39,
+                  71,
+                  8,
+                  40,
+                  104,
+                  77,
+                  51,
+                  85,
+                  54,
+                  57,
+                  665,
+                  93,
+                  30,
+                  94
+                ],
+                "accuracyRating": null,
+                "checkinRating": null,
+                "cleanlinessRating": null,
+                "communicationRating": null,
+                "locationRating": null,
+                "valueRating": null,
+                "guestSatisfactionOverall": null,
+                "visibleReviewCount": null
+              }
+            },
+            "clientLoggingContext": {
+              "__typename": "StayPDPLoggingContext",
+              "productId": "583506399130132903",
+              "pdpType": "MARKETPLACE",
+              "staysData": null
+            },
+            "seoFeatures": {
+              "__typename": "SeoFeatures",
+              "androidAlternateUrl": "android-app://com.airbnb.android/airbnb/rooms/583506399130132903",
+              "androidDeeplink": "airbnb://rooms/583506399130132903",
+              "canonicalUrl": "https://www.airbnb.ru/rooms/583506399130132903",
+              "iphoneDeeplink": "airbnb://rooms/583506399130132903",
+              "metaDescription": "7 янв. 2023 г. - Дом целиком за $237. Это современное и недавно построенное шале расположено недалеко от горнолыжного района Крайшберг, на новом и современном альпийском курорте, в унив...",
+              "title": "Роскошный дом с сауной рядом с Крайшбергом. — Дома в аренду в г. St. Lorenzen am Kreischberg, Steiermark, Австрия - Airbnb",
+              "breadcrumbDetails": [
+                {
+                  "__typename": "SeoBreadcrumbDetails",
+                  "linkRoute": "/st-lorenzen-am-kreischberg-austria/stays",
+                  "linkText": "St. Lorenzen am Kreischberg",
+                  "searchText": "St. Lorenzen am Kreischberg, Австрия"
+                },
+                {
+                  "__typename": "SeoBreadcrumbDetails",
+                  "linkRoute": "/s/homes",
+                  "linkText": "Жилье",
+                  "searchText": ""
+                },
+                {
+                  "__typename": "SeoBreadcrumbDetails",
+                  "linkRoute": "/",
+                  "linkText": "Airbnb",
+                  "searchText": ""
+                }
+              ],
+              "nearbyCities": [],
+              "neighborhoodBreadcrumbDetails": [
+                {
+                  "__typename": "SeoBreadcrumbDetails",
+                  "linkRoute": "/st-lorenzen-am-kreischberg-austria/stays",
+                  "linkText": "St. Lorenzen am Kreischberg",
+                  "searchText": "St. Lorenzen am Kreischberg, Австрия"
+                },
+                {
+                  "__typename": "SeoBreadcrumbDetails",
+                  "linkRoute": "/s/homes",
+                  "linkText": "Жилье",
+                  "searchText": ""
+                },
+                {
+                  "__typename": "SeoBreadcrumbDetails",
+                  "linkRoute": "/",
+                  "linkText": "Airbnb",
+                  "searchText": ""
+                }
+              ],
+              "ogTags": {
+                "__typename": "SeoOgTags",
+                "ogDescription": "Дом целиком в г. St. Lorenzen am Kreischberg, Австрия. Это современное и недавно построенное шале расположено недалеко от горнолыжного района Крайшберг, на новом и современном альпийском курорте, в унив...",
+                "ogImage": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-583506399130132903/original/8d719a34-00ae-4763-92b4-37c0f52a67d0.jpeg?im_w=720",
+                "ogTitle": "Роскошный дом с сауной рядом с Крайшбергом. — Дома в аренду в г. St. Lorenzen am Kreischberg, Steiermark, Австрия",
+                "ogType": "airbedandbreakfast:listing",
+                "ogUrl": "https://www.airbnb.ru/rooms/583506399130132903",
+                "ogImageHeight": null,
+                "ogImageWidth": null,
+                "ogVideoUrl": null,
+                "ogVideoHeight": null,
+                "ogVideoWidth": null
+              },
+              "otherPropertyTypes": [
+                {
+                  "__typename": "SeoOtherPropertyType",
+                  "id": "U2VvT3RoZXJQcm9wZXJ0eVR5cGU6NTgzNTA2Mzk5MTMwMTMyOTAy",
+                  "option": "Квартиры",
+                  "url": "/s/St%252E-Lorenzen-am-Kreischberg--Австрия/homes?property_type_id[]=1"
+                },
+                {
+                  "__typename": "SeoOtherPropertyType",
+                  "id": "U2VvT3RoZXJQcm9wZXJ0eVR5cGU6NTgzNTA2Mzk5MTMwMTMyOTAw",
+                  "option": "Bed and breakfasts (B&B)",
+                  "url": "/s/St%252E-Lorenzen-am-Kreischberg--Австрия/homes?property_type_id[]=3"
+                },
+                {
+                  "__typename": "SeoOtherPropertyType",
+                  "id": "U2VvT3RoZXJQcm9wZXJ0eVR5cGU6NTgzNTA2Mzk5MTMwMTMyODY4",
+                  "option": "Лофты",
+                  "url": "/s/St%252E-Lorenzen-am-Kreischberg--Австрия/homes?property_type_id[]=35"
+                },
+                {
+                  "__typename": "SeoOtherPropertyType",
+                  "id": "U2VvT3RoZXJQcm9wZXJ0eVR5cGU6NTgzNTA2Mzk5MTMwMTMyODky",
+                  "option": "Виллы",
+                  "url": "/s/St%252E-Lorenzen-am-Kreischberg--Австрия/homes?property_type_id[]=11"
+                },
+                {
+                  "__typename": "SeoOtherPropertyType",
+                  "id": "U2VvT3RoZXJQcm9wZXJ0eVR5cGU6NTgzNTA2Mzk5MTMwMTMyODY2",
+                  "option": "Кондоминиумы",
+                  "url": "/s/St%252E-Lorenzen-am-Kreischberg--Австрия/homes?property_type_id[]=37"
+                }
+              ],
+              "propertySearchUrl": "/st-lorenzen-am-kreischberg-austria/stays",
+              "relImageSrc": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-583506399130132903/original/8d719a34-00ae-4763-92b4-37c0f52a67d0.jpeg?im_w=720",
+              "twitterTags": {
+                "__typename": "SeoTwitterTags",
+                "twitterCard": "photo",
+                "twitterDescription": null,
+                "twitterImage": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-583506399130132903/original/8d719a34-00ae-4763-92b4-37c0f52a67d0.jpeg?im_w=720",
+                "twitterTitle": null,
+                "twitterUrl": "https://www.airbnb.ru/rooms/583506399130132903"
+              },
+              "indexInSearchEngines": true
+            },
+            "initialTranslationState": null,
+            "bookingPrefetchData": {
+              "__typename": "PdpBookingPrefetchData",
+              "isHotelRatePlanEnabled": false,
+              "tpointContent": null,
+              "barPrice": null,
+              "canInstantBook": true,
+              "cancellationPolicies": [
+                {
+                  "__typename": "LegacyPdpCancellationSection",
+                  "cancellation_policy_price_type": null,
+                  "book_it_module_tooltip": "Укажите даты, чтобы посмотреть условия отмены.",
+                  "cancellation_policy_id": 6,
+                  "link": "/help/article/2637",
+                  "link_text": "Получить полную информацию",
+                  "localized_cancellation_policy_name": "Суперстрогие 30 дней",
+                  "milestones": [],
+                  "subtitles": [
+                    "Укажите даты, чтобы посмотреть условия отмены."
+                  ],
+                  "title": ""
+                }
+              ],
+              "p3DepositData": null,
+              "p3MessageData": null,
+              "p3CancellationSection": {
+                "__typename": "LegacyPdpCancellationSection",
+                "cancellationPolicyPriceType": null
+              },
+              "price": null,
+              "productRateSections": null,
+              "p3_display_rate": null,
+              "productItemDetail": null,
+              "ratePlanLoggingEventData": {
+                "__typename": "LoggingEventData",
+                "loggingId": "ratePlanInput",
+                "experiments": null,
+                "eventData": null,
+                "eventDataSchemaName": null,
+                "section": null,
+                "component": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "extensions": {
+    "traceId": "b3BNvMRTuO92ZMTSr6MrYg=="
+  }
+}
