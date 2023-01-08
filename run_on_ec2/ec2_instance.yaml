@@ -1,0 +1,57 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Creates an EC2 instance and runs a Python script on it'
+Resources:
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CidrIp: 0.0.0.0/0
+
+  EC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      # ImageId: 'ami-0a261c0e5f51090b1' # amazon linux
+      ImageId: 'ami-0039da1f3917fa8e3' # ubuntu 22.04
+      InstanceType: t2.micro
+      KeyName: 'aws_aljeshishe3_key'
+      Monitoring: true
+      SecurityGroups:
+      - !Ref InstanceSecurityGroup
+      UserData:
+        'Fn::Base64': !Sub |
+          #!/bin/bash
+          echo "hello-world" && \
+          sudo apt update -y && \
+          sudo apt install -y docker.io  && \
+          # sudo service docker start && \
+          echo "running docker" && \
+          sudo docker run -t ubuntu bash -c 'for i in {0..100}; do echo $i; sleep 1; done'  && \
+          echo "running docker done"
+          aws cloudformation delete-stack --stack-name run-on-ec2
+          # wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
+          # sudo apt-get install cloud-utils
+          # ec2metadata --instance-id
+Outputs:
+  InstanceId:
+    Description: InstanceId of the newly created EC2 instance
+    Value: !Ref EC2Instance
+  AZ:
+    Description: Availability Zone of the newly created EC2 instance
+    Value: !GetAtt
+      - EC2Instance
+      - AvailabilityZone
+  PublicDNS:
+    Description: Public DNSName of the newly created EC2 instance
+    Value: !GetAtt
+      - EC2Instance
+      - PublicDnsName
+  PublicIP:
+    Description: Public IP address of the newly created EC2 instance
+    Value: !GetAtt
+      - EC2Instance
+      - PublicIp
