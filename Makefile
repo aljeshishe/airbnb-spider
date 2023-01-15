@@ -2,7 +2,7 @@ SHELL:=/usr/bin/env bash
 
 .PHONY: web
 web:
-	python dash_app/app.py
+	python dash_app/app.py  $(filter-out $@, $(MAKECMDGOALS))
 
 .PHONY: crawl
 crawl:
