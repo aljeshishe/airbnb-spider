@@ -6,23 +6,33 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from airbnb_spider.lib.bbox import BBox
+from airbnb_spider.lib.params import Params
+
 LOG_LEVEL = 'INFO'
 BOT_NAME = 'airbnb_spider'
 
-SPIDER_MODULES = ['airbnb_spider.spiders']
-NEWSPIDER_MODULE = 'airbnb_spider.spiders'
-CONCURRENT_REQUESTS_PER_DOMAIN = 1
-CONCURRENT_REQUESTS_PER_IP = 1
-CONCURRENT_REQUESTS = 1
-DOWNLOAD_DELAY = 3
-LOGSTATS_INTERVAL = 10
+# SPIDER_MODULES = ['airbnb_spider']
+# NEWSPIDER_MODULE = 'airbnb_spider'
+
+CONCURRENT_REQUESTS_PER_DOMAIN = 2
+CONCURRENT_REQUESTS_PER_IP = 2
+CONCURRENT_REQUESTS = 2
+
+CONCURRENT_REQUESTS_PER_DOMAIN = 5
+CONCURRENT_REQUESTS_PER_IP = 5
+CONCURRENT_REQUESTS = 5
+# DOWNLOAD_DELAY = 3
+LOGSTATS_INTERVAL = 20
+REQUEST_RESPONSE_DEBUG = False
+REQUEST_RESPONSE_BODY_DEBUG = False
 
 # FEED_EXPORT_BATCH_ITEM_COUNT = 100
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'airbnb_spider (+http://www.yourdomain.com)'
-FEEDS = {
-    "items.json": {"format": "jsonl"},
-}
+# FEEDS = {
+#     "items.json": {"format": "jsonl"},
+# }
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -59,7 +69,7 @@ ROBOTSTXT_OBEY = False
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'airbnb_spider.spiders.middlewares.LoggingDownloaderMiddleware': 1000,
+    'airbnb_spider.lib.middlewares.LoggingDownloaderMiddleware': 1000,
 }
 REQUEST_RESPONSE_DEBUG = False
 REQUEST_RESPONSE_BODY_DEBUG = True
@@ -72,7 +82,7 @@ REQUEST_RESPONSE_BODY_DEBUG = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'airbnb_spider.pipelines.ResultsDirPipeline': 300,
+    'airbnb_spider.lib.pipelines.ResultsDirPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -99,3 +109,13 @@ ITEM_PIPELINES = {
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = '2.7'
 TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'
+
+
+PARAMS = Params(
+    name="test",
+    start_date="2023-02-01", end_date="2023-02-07",
+    # bbox=BBox(-7.710992,-21.093750,71.357067,157.148438) # all except USA, australia
+    bbox=BBox(39.7566663125, 30.4534576875, 39.844177875, 30.541219625)  # test
+    # bbox=BBox(38.873929,39.396973,43.628123,50.866699) # georgia armenia azerbaijan
+    # bbox=BBox(34.157095, 32.000526, 35.890134, 34.859832) # cyprus
+)
