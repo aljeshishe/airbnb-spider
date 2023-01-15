@@ -47,7 +47,7 @@ def enrich_df(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def load(path: str) -> pd.DataFrame:
+def load(path: Union[str, Path]) -> pd.DataFrame:
     path = path if isinstance(path, Path) else Path(path)
     if path.is_dir():
         df = read_pickle_dir(path)
