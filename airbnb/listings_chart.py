@@ -24,16 +24,12 @@ def create(df):
                             # color_continuous_scale="sunset",
                             color_continuous_scale=["rgb(248, 160, 126)", "rgb(92, 83, 165)"],
                             range_color=[0, 50],
-                            custom_data=["listing_id", "price", "discount", "rating", "reviews", "listing_roomTypeCategory"],
+                            custom_data=["listing_id", "price", "discount", "rating", "reviews",
+                                         "listing_roomTypeCategory"],
                             # hover_data=[],
                             height=1000)
 
-    hovertemplate = "<b>%{customdata[1]}$</b><br>" \
-                    "discount: %{customdata[2]:.0f}%<br>" \
-                    "rating: %{customdata[3]:.2f}<br>" \
-                    "reviews: %{customdata[4]}<br>" \
-                    "type: %{customdata[5]}"
-    fig.update_traces(hovertemplate=hovertemplate)
+    fig.update_traces(hoverinfo="none", hovertemplate=None)
     fig.update_layout({"margin": {"l": 10, "r": 10, "t": 10, "b": 10}}, uirevision="Don't change")
     # fig.update_traces(cluster=dict(enabled=True))
     return fig
