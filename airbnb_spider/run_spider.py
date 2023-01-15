@@ -9,5 +9,6 @@ def run_spider():
     process.crawl(AirbnbSpider, params=AirbnbSpider.DEFAULT_PARAMS)
     process.start()
 
+
 if __name__ == "__main__":
     run_spider()
