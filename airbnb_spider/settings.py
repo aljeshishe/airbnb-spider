@@ -112,10 +112,11 @@ TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'
 
 
 PARAMS = Params(
-    name="test",
+    name="spain",
     start_date="2023-02-01", end_date="2023-02-07",
     # bbox=BBox(-7.710992,-21.093750,71.357067,157.148438) # all except USA, australia
-    bbox=BBox(39.7566663125, 30.4534576875, 39.844177875, 30.541219625)  # test
+    # bbox=BBox(39.7566663125, 30.4534576875, 39.844177875, 30.541219625),  # test
+    bboxes_str="""http://bboxfinder.com/#35.889050,-11.469727,44.308127,5.097656"""
     # bbox=BBox(38.873929,39.396973,43.628123,50.866699) # georgia armenia azerbaijan
     # bbox=BBox(34.157095, 32.000526, 35.890134, 34.859832) # cyprus
 )
