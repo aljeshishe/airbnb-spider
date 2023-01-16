@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 
 
 def create(df: pd.DataFrame) -> go.Figure:
-    y, x = np.histogram(df.price, bins=80, range=(0, 400))
+    y, x = np.histogram(df.price, bins=120, range=(0, 2000))
     fig = px.bar(x=x[:-1], y=y, labels={"x": "Price", "y": "Count"})
 
     fig.update_layout(
@@ -30,5 +30,12 @@ def create(df: pd.DataFrame) -> go.Figure:
             "dragmode": "select",
         }
     )
-
+    # set ticks
+    fig.update_layout(
+        xaxis=dict(
+            tickmode='linear',
+            tick0=0,
+            dtick=25
+        )
+    )
     return fig
