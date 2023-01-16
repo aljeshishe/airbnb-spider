@@ -3,7 +3,7 @@ import itertools
 from collections import deque
 from datetime import date, timedelta
 from itertools import tee
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 import numpy as np
 
@@ -23,7 +23,9 @@ def format_dict(d):
     return ' '.join([f'{k}:{v}' for k, v in d.items()])
 
 
-def to_date(date_str: str):
+def to_date(date_str: Optional[str]):
+    if date_str is None:
+        return None
     return datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
 
 
@@ -33,7 +35,7 @@ def from_date(dt: date):
 
 def dates_generator(start_date, end_date, step=7):
     step = datetime.timedelta(days=step)
-    while start_date <= end_date:
+    while start_date < end_date:
         yield start_date, start_date + step
         start_date += step
 
@@ -81,3 +83,19 @@ def as_bboxes(bboxes_str:str) -> list[BBox]:
         bbox = BBox(*map(float, line.split(",")))
         result.append(bbox)
     return result
+
+def check_port(port):
+    """Check if port is free"""
+    import socket
+    s = socket.socket(socket.AF_INET, type=socket.SOCK_STREAM)
+    try:
+        s.bind(("", port))
+        s.close()
+        return True
+    except socket.error:
+        return False
+
+def get_free_port(port):
+    for p in range(port, 65535):
+        if check_port(p):
+            return p

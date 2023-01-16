@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 
 import scrapy
 
@@ -30,8 +31,8 @@ class AirbnbSpider(scrapy.Spider):
         else:
             bboxes = [self.params.bbox]
 
+        end_date = self.params.end_date or self.params.start_date + timedelta(days=self.params.days)
         for bbox in bboxes:
             log.info(f"Requesting {bbox}")
-            for _start_date, _end_date in utils.dates_generator(start_date=self.params.start_date,
-                                                                end_date=self.params.end_date):
+            for _start_date, _end_date in utils.dates_generator(start_date=self.params.start_date, end_date=end_date, step=self.params.days):
                 yield ListingRequest(spider=self, bbox=bbox, start_date=_start_date, end_date=_end_date)
