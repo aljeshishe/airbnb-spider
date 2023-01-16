@@ -1,25 +1,20 @@
 import webbrowser
-from pathlib import Path
 
 import click
 import dash
-import rootpath
 from dash import dcc, html
 from dash.dependencies import Input, Output
 
-from airbnb import data, listings_chart, prices_chart, per_city_chart, per_city_data
+from airbnb import data, per_city_data
 from airbnb_spider.lib import utils
-from dash_app.utils import to_path
+from web.utils import to_path
 
 MAX_LISTINGS_DISPLAYED = 50000
 
 
 @click.command
 @click.argument("result_path")
-def main(result_path:str):
-    # data
-    # df = data.load("/Users/alexeygrachev/Desktop/git/airbnb-spider/results/2022-12-23_01-32-34") #asia
-    # df = data.load("/Users/alexeygrachev/Desktop/git/airbnb-spider/results/2022-12-23_03-58-51") #europe
+def main(result_path: str):
     path = to_path(result_path)
     df = data.load(path)
     df = df.sort_values(by="price")
@@ -47,6 +42,7 @@ from **{path.parts[-1]}**
         ]),
         html.Div(id="dummy-div", style={"display": "none"}),
     ])
+
     # @app.callback(
     #     Output("price-histogram", "figure"),
     #     Input("input_price_min", "value"),
@@ -89,7 +85,6 @@ from **{path.parts[-1]}**
             url = f"https://www.airbnb.ru/rooms/{id}?adults=1&check_in=2023-02-01&check_out=2023-03-01"
             webbrowser.open(url, autoraise=False)
         return dash.no_update
-
 
     app.run_server(debug=True, port=utils.get_free_port(8080), use_reloader=True, exclude_patterns=[r"*.pkl.zip"])
 

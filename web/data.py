@@ -4,7 +4,7 @@ import click
 import dtale
 
 from airbnb import data
-from dash_app.utils import to_path
+from web.utils import to_path
 
 
 @click.command
