@@ -1,7 +1,7 @@
 import plotly.express as px
 import streamlit as st
 
-from airbnb import data, listings_chart
+from airbnb import data, listings_graph
 
 px.set_mapbox_access_token(
     "pk.eyJ1IjoiYWxqZXNoaXNoZSIsImEiOiJjbGJwaHJiajMwc3pxM3FxaDc4anltemN1In0.XZoRGDAvlJjbC21qfZTJcA")
