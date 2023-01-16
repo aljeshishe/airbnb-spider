@@ -8,14 +8,17 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 
 from airbnb import data, listings_chart, prices_chart, per_city_chart, per_city_data
+from airbnb_spider.lib import utils
+
+ROOT_PATH = Path(rootpath.detect(__file__))
+
 
 def to_path(result_path: str) -> Path:
     path = Path(result_path)
     if path.exists():
         return path
 
-    root_path = Path(rootpath.detect(__file__))
-    path = root_path / "results" / result_path
+    path = ROOT_PATH / "results" / result_path
     return path
 
 @click.command
@@ -42,8 +45,10 @@ from **{path.parts[-1]}**
         dcc.Graph(id="price-histogram", figure=prices_chart.create(df), config={"displayModeBar": False}),
         dcc.Dropdown(categories, ["entire_home"], multi=True, id="category-dropdown"),
         html.Div(id="filter-output"),
-        html.Div([dcc.Graph(id="listings-graph")]),
-        html.Div([dcc.Graph(id="per-city-graph")]),
+        dcc.Tabs([
+            dcc.Tab(label='Listings', children=[dcc.Graph(id="listings-graph")]),
+            dcc.Tab(label='Per city', children=[dcc.Graph(id="per-city-graph")]),
+        ]),
         html.Div(id="dummy-div", style={"display": "none"}),
     ])
 
@@ -73,27 +78,12 @@ from **{path.parts[-1]}**
     def graph_click_opens_url(clickData):
         if clickData:
             id = clickData["points"][0]["customdata"][0]
-            url = f"https://www.airbnb.ru/rooms/{id}?adults=1&check_in=2023-02-01&check_out=2023-02-07"
+            url = f"https://www.airbnb.ru/rooms/{id}?adults=1&check_in=2023-02-01&check_out=2023-03-01"
             webbrowser.open(url, autoraise=False)
         return dash.no_update
 
-    # check port is free
-    def check_port(port):
-        import socket
-        s = socket.socket(socket.AF_INET, type=socket.SOCK_STREAM)
-        try:
-            s.bind(("", port))
-            s.close()
-            return True
-        except socket.error:
-            return False
 
-    def get_free_port(port):
-        for p in range(port, 65535):
-            if check_port(p):
-                return p
-
-    app.run_server(debug=True, use_reloader=True, port=get_free_port(8080))
+    app.run_server(debug=True, use_reloader=False, port=utils.get_free_port(8080), exclude_patterns=[r"*.pkl.zip"])
 
 
 if __name__ == "__main__":
