@@ -6,7 +6,6 @@ px.set_mapbox_access_token(
 
 
 def create(df):
-    # generate random series of size l
     mean_lat = df["listing_coordinate_latitude"].mean()
     mean_lng = df["listing_coordinate_longitude"].mean()
 
@@ -23,7 +22,7 @@ def create(df):
                             size_max=15,
                             # color_continuous_scale="sunset",
                             color_continuous_scale=["rgb(248, 160, 126)", "rgb(92, 83, 165)"],
-                            range_color=[0, 50],
+                            # range_color=[0, 50],
                             custom_data=["listing_id", "price", "discount", "rating", "reviews",
                                          "listing_roomTypeCategory"],
                             # hover_data=[],
