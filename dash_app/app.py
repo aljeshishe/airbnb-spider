@@ -9,17 +9,10 @@ from dash.dependencies import Input, Output
 
 from airbnb import data, listings_chart, prices_chart, per_city_chart, per_city_data
 from airbnb_spider.lib import utils
+from dash_app.utils import to_path
 
-ROOT_PATH = Path(rootpath.detect(__file__))
+MAX_LISTINGS_DISPLAYED = 50000
 
-
-def to_path(result_path: str) -> Path:
-    path = Path(result_path)
-    if path.exists():
-        return path
-
-    path = ROOT_PATH / "results" / result_path
-    return path
 
 @click.command
 @click.argument("result_path")
@@ -29,6 +22,7 @@ def main(result_path:str):
     # df = data.load("/Users/alexeygrachev/Desktop/git/airbnb-spider/results/2022-12-23_03-58-51") #europe
     path = to_path(result_path)
     df = data.load(path)
+    df = df.sort_values(by="price")
     price_min = df["price"].min()
     price_max = df["price"].max()
 
@@ -42,16 +36,24 @@ def main(result_path:str):
 ## Airbnb listing
 from **{path.parts[-1]}**
 """),
+        dcc.Input(id="input_price_min", type="number", placeholder=f"input min price (min:{price_min})"),
+        dcc.Input(id="input_price_max", type="number", placeholder=f"input max price (max:{price_max})"),
         dcc.Graph(id="price-histogram", figure=prices_chart.create(df), config={"displayModeBar": False}),
         dcc.Dropdown(categories, ["entire_home"], multi=True, id="category-dropdown"),
-        html.Div(id="filter-output"),
+        dcc.Markdown(id="filter-output"),
         dcc.Tabs([
             dcc.Tab(label='Listings', children=[dcc.Graph(id="listings-graph")]),
             dcc.Tab(label='Per city', children=[dcc.Graph(id="per-city-graph")]),
         ]),
         html.Div(id="dummy-div", style={"display": "none"}),
     ])
-
+    # @app.callback(
+    #     Output("price-histogram", "figure"),
+    #     Input("input_price_min", "value"),
+    #     Input("input_price_max", "value"),
+    # )
+    # def on_change_min_max_price(category, price_selected_data):
+    #     prices_chart.create(df)
     @app.callback(
         Output("listings-graph", "figure"),
         Output("per-city-graph", "figure"),
@@ -66,10 +68,16 @@ from **{path.parts[-1]}**
             (df["price"] < high) &
             (df["listing_roomTypeCategory"].isin(category))
             ]
-        listings_fig = listings_chart.create(filtered_df)
+        show_df = filtered_df[:MAX_LISTINGS_DISPLAYED]
+        hidden_str = ""
+        if hidden_count := len(filtered_df) - len(show_df):
+            hidden_str = f"Hidden: **{hidden_count}**"
+        listings_fig = listings_chart.create(show_df)
 
         per_city_fig = per_city_chart.create(per_city_data.group_per_city(df=filtered_df))
-        return listings_fig, per_city_fig, f"Showing {len(filtered_df)} from {len(df)} Price: {low:.1f} - {high:.1f}"
+        return listings_fig, \
+               per_city_fig, \
+               f"Total: **{len(df)}** Filtered: **{len(filtered_df)}** {hidden_str} Price: {low:.1f} - {high:.1f}"
 
     # handles on_click and opnes browser
     @app.callback(
@@ -83,7 +91,7 @@ from **{path.parts[-1]}**
         return dash.no_update
 
 
-    app.run_server(debug=True, use_reloader=False, port=utils.get_free_port(8080), exclude_patterns=[r"*.pkl.zip"])
+    app.run_server(debug=True, port=utils.get_free_port(8080), use_reloader=True, exclude_patterns=[r"*.pkl.zip"])
 
 
 if __name__ == "__main__":
