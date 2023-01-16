@@ -2,10 +2,10 @@ import webbrowser
 
 import click
 import dash
-from dash import dcc, html
+from dash import dcc, html, no_update
 from dash.dependencies import Input, Output
 
-from airbnb import data, per_city_data
+from airbnb import data, per_city_data, prices_graph, listings_graph, per_city_graph
 from airbnb_spider.lib import utils
 from web.utils import to_path
 
@@ -33,15 +33,40 @@ from **{path.parts[-1]}**
 """),
         dcc.Input(id="input_price_min", type="number", placeholder=f"input min price (min:{price_min})"),
         dcc.Input(id="input_price_max", type="number", placeholder=f"input max price (max:{price_max})"),
-        dcc.Graph(id="price-histogram", figure=prices_chart.create(df), config={"displayModeBar": False}),
+        dcc.Graph(id="price-histogram", figure=prices_graph.create(df), config={"displayModeBar": False}),
         dcc.Dropdown(categories, ["entire_home"], multi=True, id="category-dropdown"),
         dcc.Markdown(id="filter-output"),
         dcc.Tabs([
-            dcc.Tab(label='Listings', children=[dcc.Graph(id="listings-graph")]),
-            dcc.Tab(label='Per city', children=[dcc.Graph(id="per-city-graph")]),
+            dcc.Tab(label="Listings", children=[dcc.Graph(id="listings-graph", clear_on_unhover=True)]),
+            dcc.Tab(label="Per city", children=[dcc.Graph(id="per-city-graph")]),
         ]),
+        dcc.Tooltip(id="listings-graph-tooltip"),
         html.Div(id="dummy-div", style={"display": "none"}),
     ])
+
+    @app.callback(
+        Output("listings-graph-tooltip", "show"),
+        Output("listings-graph-tooltip", "bbox"),
+        Output("listings-graph-tooltip", "children"),
+        Input("listings-graph", "hoverData"),
+    )
+    def display_hover(hoverData):
+        if hoverData is None:
+            return False, no_update, no_update
+
+        # demo only shows the first point, but other points may also be available
+        pt = hoverData["points"][0]
+        bbox = pt["bbox"]
+
+        listing_id = hoverData["points"][0]["customdata"][0]
+        df_row = df[df["listing_id"] == listing_id]
+        price = df_row["price"].values[0]
+        discount = df_row["discount"].values[0]
+        rating = df_row["rating"].values[0]
+        reviews = df_row["reviews"].values[0]
+        markdown = f"""**{price}$** discount:**{discount:.0f}%** rating:**{rating:.1f}** reviews:**{reviews}**"""
+        children = [dcc.Markdown(markdown)]
+        return True, bbox, children
 
     # @app.callback(
     #     Output("price-histogram", "figure"),
@@ -68,9 +93,9 @@ from **{path.parts[-1]}**
         hidden_str = ""
         if hidden_count := len(filtered_df) - len(show_df):
             hidden_str = f"Hidden: **{hidden_count}**"
-        listings_fig = listings_chart.create(show_df)
+        listings_fig = listings_graph.create(show_df)
 
-        per_city_fig = per_city_chart.create(per_city_data.group_per_city(df=filtered_df))
+        per_city_fig = per_city_graph.create(per_city_data.group_per_city(df=filtered_df))
         return listings_fig, \
                per_city_fig, \
                f"Total: **{len(df)}** Filtered: **{len(filtered_df)}** {hidden_str} Price: {low:.1f} - {high:.1f}"
@@ -81,12 +106,14 @@ from **{path.parts[-1]}**
         Input("listings-graph", "clickData"))
     def graph_click_opens_url(clickData):
         if clickData:
-            id = clickData["points"][0]["customdata"][0]
-            url = f"https://www.airbnb.ru/rooms/{id}?adults=1&check_in=2023-02-01&check_out=2023-03-01"
-            webbrowser.open(url, autoraise=False)
+            listing_id = clickData["points"][0]["customdata"][0]
+            url = f"https://www.airbnb.ru/rooms/{listing_id}?adults=1&check_in=2023-02-01&check_out=2023-03-01"
+            webbrowser.open(url, new=2, autoraise=False)
         return dash.no_update
 
-    app.run_server(debug=True, port=utils.get_free_port(8080), use_reloader=True, exclude_patterns=[r"*.pkl.zip"])
+    app.run_server(debug=True, port=utils.get_free_port(8080),
+                   use_reloader=False, exclude_patterns=[r"*.pkl.zip"]
+                   )
 
 
 if __name__ == "__main__":
