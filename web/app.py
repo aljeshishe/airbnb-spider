@@ -10,6 +10,8 @@ from airbnb_spider.lib import utils
 from web.utils import to_path
 
 MAX_LISTINGS_DISPLAYED = 50000
+CHECK_IN_DATE = "2023-02-01"
+CHECK_OUT_DATE = "2023-03-01"
 
 
 @click.command
@@ -31,8 +33,6 @@ def main(result_path: str):
 ## Airbnb listing
 from **{path.parts[-1]}**
 """),
-        dcc.Input(id="input_price_min", type="number", placeholder=f"input min price (min:{price_min})"),
-        dcc.Input(id="input_price_max", type="number", placeholder=f"input max price (max:{price_max})"),
         dcc.Graph(id="price-histogram", figure=prices_graph.create(df), config={"displayModeBar": False}),
         dcc.Dropdown(categories, ["entire_home"], multi=True, id="category-dropdown"),
         dcc.Markdown(id="filter-output"),
@@ -68,13 +68,6 @@ from **{path.parts[-1]}**
         children = [dcc.Markdown(markdown)]
         return True, bbox, children
 
-    # @app.callback(
-    #     Output("price-histogram", "figure"),
-    #     Input("input_price_min", "value"),
-    #     Input("input_price_max", "value"),
-    # )
-    # def on_change_min_max_price(category, price_selected_data):
-    #     prices_chart.create(df)
     @app.callback(
         Output("listings-graph", "figure"),
         Output("per-city-graph", "figure"),
@@ -107,7 +100,10 @@ from **{path.parts[-1]}**
     def graph_click_opens_url(clickData):
         if clickData:
             listing_id = clickData["points"][0]["customdata"][0]
-            url = f"https://www.airbnb.ru/rooms/{listing_id}?adults=1&check_in=2023-02-01&check_out=2023-03-01"
+            df_row = df[df["listing_id"] == listing_id]
+            check_in_date = df_row["check_in_date"].values[0] if "check_in_date" in df.columns else CHECK_IN_DATE
+            check_out_date = df_row["check_out_date"].values[0] if "check_out_date" in df.columns else CHECK_OUT_DATE
+            url = f"https://www.airbnb.ru/rooms/{listing_id}?adults=1&check_in={check_in_date}&check_out={check_out_date}"
             webbrowser.open(url, new=2, autoraise=False)
         return dash.no_update
 
