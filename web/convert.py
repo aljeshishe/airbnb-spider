@@ -1,3 +1,5 @@
+import shutil
+
 import click
 
 from airbnb import data
@@ -12,11 +14,20 @@ pu.install()
 def convert(result_path: str):
     project_path = Path(rootpath.detect(__file__))
 
-    input_file = project_path / f"results/{result_path}"
-    output_file = project_path / f"results/{result_path}.pkl.zip"
+    input_path = project_path / f"results/{result_path}"
+    output_path = project_path / f"results/{result_path}.pkl.zip"
 
-    print(f"Converting {input_file} to {output_file}")
-    df = data.read_pickle_dir(input_file).drop_duplicates(subset="listing_id").to_pickle(output_file)
+    print(f"Converting {input_path} to {output_path}")
+    data.read_pickle_dir(input_path).drop_duplicates(subset="listing_id").to_pickle(output_path)
+
+    answer = ""
+    while answer.lower() not in ["y", "n"]:
+        answer = input("Do you want to delete the original files? [y/n] ")
+    if answer.lower() == "n":
+        return
+
+    shutil.rmtree(input_path, ignore_errors=True)
+
 
 
 if __name__ == "__main__":
