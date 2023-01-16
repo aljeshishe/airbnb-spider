@@ -101,8 +101,8 @@ from **{path.parts[-1]}**
         if clickData:
             listing_id = clickData["points"][0]["customdata"][0]
             df_row = df[df["listing_id"] == listing_id]
-            check_in_date = df_row["check_in_date"].values[0] if "check_in_date" in df.columns else CHECK_IN_DATE
-            check_out_date = df_row["check_out_date"].values[0] if "check_out_date" in df.columns else CHECK_OUT_DATE
+            check_in_date = df_row["start_date"].values[0] if "start_date" in df.columns else CHECK_IN_DATE
+            check_out_date = df_row["end_date"].values[0] if "end_date" in df.columns else CHECK_OUT_DATE
             url = f"https://www.airbnb.ru/rooms/{listing_id}?adults=1&check_in={check_in_date}&check_out={check_out_date}"
             webbrowser.open(url, new=2, autoraise=False)
         return dash.no_update
