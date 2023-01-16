@@ -23,10 +23,9 @@ def create(df):
                             # color_continuous_scale="sunset",
                             color_continuous_scale=["rgb(248, 160, 126)", "rgb(92, 83, 165)"],
                             # range_color=[0, 50],
-                            custom_data=["listing_id", "price", "discount", "rating", "reviews",
-                                         "listing_roomTypeCategory"],
+                            custom_data=["listing_id"],
                             # hover_data=[],
-                            height=1000)
+                            height=1000,)
 
     fig.update_traces(hoverinfo="none", hovertemplate=None)
     fig.update_layout({"margin": {"l": 10, "r": 10, "t": 10, "b": 10}}, uirevision="Don't change")
