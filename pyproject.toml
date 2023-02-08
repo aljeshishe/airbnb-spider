@@ -36,7 +36,7 @@ watchdog = "^2.2.0"
 streamlit-plotly-events = "^0.0.6"
 rootpath = "^0.1.1"
 pandas-utils = {git = "https://github.com/aljeshishe/pandas_utils.git", develop = true}
-dtale = "^2.10.0"
+dtale = "^2.12.2"
 
 [tool.poetry.group.test.dependencies]
 mypy = "^0.982"
